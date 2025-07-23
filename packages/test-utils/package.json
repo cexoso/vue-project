@@ -1,0 +1,43 @@
+{
+  "name": "@cexoso/test-utils",
+  "version": "0.0.0",
+  "description": "",
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false
+  },
+  "files": [
+    "src",
+    "!**/*.spec.ts",
+    "!**/*.spec.tsx"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "repository": "https://github.com/cexoso/vue-project",
+  "scripts": {
+    "test": "vitest --reporter=dot",
+    "build": "ts-pkg-build build --format ESM --format CommonJS",
+    "ts-lint": "tsc --noEmit",
+    "release": "npm run ts-lint && vitest --run && npm run build",
+    "prepublishOnly": "npm run release"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cexoso/configs": "workspace: *",
+    "@cexoso/ts-pkg-build": "^0.0.23",
+    "@testing-library/dom": "^10.4.0",
+    "@vitejs/plugin-vue-jsx": "^5.0.1",
+    "happy-dom": "^18.0.1",
+    "typescript": "^5.5.4",
+    "vite": "^7.0.5",
+    "vitest": "^2.0.4",
+    "vue": "^3.5.18"
+  },
+  "dependencies": {
+    "@types/sinon": "^17.0.4",
+    "sinon": "^21.0.0"
+  }
+}
