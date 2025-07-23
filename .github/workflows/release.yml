@@ -36,13 +36,6 @@ jobs:
         id: changesets
         uses: changesets/action@v1
         with:
-          commit: 'chore: release'
-          title: 'chore: release'
-          # 禁用PR创建，直接发布
-          createPullRequest: false
-          # 指定目标发布分支
-          targetBranch: main
-          # 发布命令，根据你的项目实际情况调整
           publish: pnpm publish -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
