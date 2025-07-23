@@ -6,6 +6,11 @@
     "directory": "dist",
     "linkDirectory": false
   },
+  "scripts": {
+    "test": "vitest --reporter=dot",
+    "build": "ts-pkg-build build --format ESM --format CommonJS",
+    "prepublishOnly": "npm run build"
+  },
   "exports": {
     "./tsconfig.node.json": "./src/tsconfig.node.json"
   },
