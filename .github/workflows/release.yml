@@ -14,7 +14,7 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     permissions:
-      contents: write  # 允许推送分支、创建标签等
+      contents: write # 允许推送标签和修改内容
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
@@ -38,6 +38,12 @@ jobs:
         with:
           commit: 'chore: release'
           title: 'chore: release'
+          # 禁用PR创建，直接发布
+          createPullRequest: false
+          # 指定目标发布分支
+          targetBranch: main
+          # 发布命令，根据你的项目实际情况调整
+          publish: pnpm publish -r
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
