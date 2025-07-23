@@ -13,6 +13,8 @@ jobs:
   release:
     name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 允许推送分支、创建标签等
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3
