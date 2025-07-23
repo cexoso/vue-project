@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.3
+
+### Patch Changes
+
+- 3e2f0ac: 导出 createContext 方法
+
 ## 0.0.2
 
 ### Patch Changes
