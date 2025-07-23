@@ -7,8 +7,9 @@
     "linkDirectory": false
   },
   "files": [
-    "src/**/*.ts",
-    "!src/**/*.spec.ts"
+    "src",
+    "!**/*.spec.ts",
+    "!**/*.spec.tsx"
   ],
   "main": "./src/index.ts",
   "repository": "https://github.com/cexoso/vue-project",
