@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.2
+
+### Patch Changes
+
+- ef646e3: 使用 provider 和 inject 的方式来提供上下文，而不再直接使用 app 作为上下文
+
 ## 0.0.1
 
 ### Patch Changes
