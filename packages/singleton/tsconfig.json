@@ -1,3 +1,7 @@
 {
-  "extends": "@cexoso/configs/tsconfig.node.json"
+  "extends": "@cexoso/configs/tsconfig.node.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue"
+  }
 }
