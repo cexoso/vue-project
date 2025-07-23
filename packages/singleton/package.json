@@ -12,6 +12,7 @@
     "!**/*.spec.tsx"
   ],
   "main": "./src/index.ts",
+  "module": "./src/index.ts",
   "repository": "https://github.com/cexoso/vue-project",
   "scripts": {
     "test": "vitest --reporter=dot",
