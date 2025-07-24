@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.4
+
+### Patch Changes
+
+- fb51294: add README.md
+
 ## 0.0.3
 
 ### Patch Changes
