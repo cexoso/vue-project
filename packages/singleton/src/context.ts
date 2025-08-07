@@ -1,9 +1,15 @@
-import { Plugin, inject } from 'vue'
+import { EffectScope, Plugin, inject } from 'vue'
 
 export const ContextKey = Symbol()
 
 type Hooks = () => unknown
-type Store = Map<Hooks, unknown>
+type Store = Map<
+  Hooks,
+  {
+    cacheValue: unknown
+    scope: EffectScope
+  }
+>
 
 export interface Context {
   store: Store
@@ -24,8 +30,16 @@ export const useContext = () => {
 export const createContext = (): Plugin => {
   return {
     install(app) {
+      const store: Store = new Map()
+      const originUnmount = app.unmount
+      app.unmount = () => {
+        for (const { scope } of store.values()) {
+          scope.stop() // 在 app 卸载的时候，需要关掉 scope，让 effect 和依赖追踪释放
+        }
+        return originUnmount.apply(app)
+      }
       app.provide<Context>(ContextKey, {
-        store: new Map(),
+        store,
       })
     },
   }
