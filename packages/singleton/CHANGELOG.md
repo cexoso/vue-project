@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.5
+
+### Patch Changes
+
+- 0f7b24e: 使用 effectScope 来支持在 defined 中使用 effect 能力
+
 ## 0.0.4
 
 ### Patch Changes
