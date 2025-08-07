@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.6
+
+### Patch Changes
+
+- eec7cb7: 修复 README 文件名字拼写错误
+
 ## 0.0.5
 
 ### Patch Changes
