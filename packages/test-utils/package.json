@@ -6,6 +6,10 @@
     "directory": "dist",
     "linkDirectory": false
   },
+  "exports": {
+    ".": "./src/index.ts",
+    "./use-fake-time": "./src/use-fake-time.ts"
+  },
   "files": [
     "src",
     "!**/*.spec.ts",
