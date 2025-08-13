@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.7
+
+### Patch Changes
+
+- 321d17b: add withResolvers polyfill
+
 ## 0.0.6
 
 ### Patch Changes
