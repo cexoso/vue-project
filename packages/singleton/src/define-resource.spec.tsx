@@ -1,9 +1,9 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import { defineResource } from './define-resource'
 import { defineComponent, nextTick, reactive, shallowRef, watchEffect } from 'vue'
 import { renderComponent } from '../test/render'
 import { define } from './define-singleton'
-import { delay } from '@cexoso/test-utils'
+import { delay, getOrCreateStub } from '@cexoso/test-utils'
 import { waitFor } from '@testing-library/dom'
 
 describe('defineResource', () => {
@@ -286,5 +286,31 @@ describe('defineResource', () => {
       [undefined, 1, undefined, 20],
       '非 retail 模式，切换响应数据会立即将数据清空为 undefined'
     )
+  })
+
+  describe('兼容 runWithContext 模式直接运行, 该模式不算计算，也不会触发轮询', () => {
+    let originWarn = console.warn
+    afterEach(() => {
+      console.warn = originWarn
+    })
+    it('不会触发 vue 的 warning', () => {
+      const useId = define(() => shallowRef(1))
+      const warnStub = getOrCreateStub(console, 'warn')
+      const useRemoteData = defineResource(() => {
+        const id = useId()
+        return async () => {
+          const x = id.value
+          return delay(20).then(() => x)
+        }
+      })
+
+      const screen = renderComponent(App)
+      screen.play(() => {
+        const data = useRemoteData()
+        return data.data.value
+      })
+
+      expect(warnStub.callCount).eq(0)
+    })
   })
 })

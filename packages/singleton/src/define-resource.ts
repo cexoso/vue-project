@@ -1,4 +1,4 @@
-import { computed, ComputedRef, onUnmounted, shallowRef, watchEffect } from 'vue'
+import { computed, ComputedRef, onUnmounted, shallowRef, watchEffect, getCurrentInstance } from 'vue'
 import { define } from './define-singleton'
 
 type Result<T> = Promise<T | undefined> | undefined
@@ -115,13 +115,16 @@ export function defineResource<T>(
   })
 
   const useData = () => {
+    const currentInstance = getCurrentInstance()
     const { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed } = useController()
     // 当组件产生依赖时， RC 加1
-    startIntervalIfNeed(opts?.interval)
-    onUnmounted(() => {
-      // 当组件卸载时， RC 减1
-      stopIntervalIfNeed()
-    })
+    if (currentInstance) {
+      startIntervalIfNeed(opts?.interval)
+      onUnmounted(() => {
+        // 当组件卸载时， RC 减1
+        stopIntervalIfNeed()
+      })
+    }
 
     // 这个必须在 setup 中使用
     return {
