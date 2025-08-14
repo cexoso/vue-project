@@ -21,9 +21,9 @@ export function defineResource<T>(
   promiseComputedCreator: () => () => Result<T>,
   opts?: Options
 ): () => {
-  data: ComputedRef<T>
+  data: ComputedRef<T | undefined>
   isLoading: ComputedRef<boolean>
-  error: ComputedRef<REASON>
+  error: ComputedRef<REASON | undefined>
 } {
   const retain = Boolean(opts?.retain)
   // 绑定到 application

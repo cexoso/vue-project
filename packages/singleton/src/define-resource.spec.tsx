@@ -193,7 +193,7 @@ describe('defineResource', () => {
         const { data, isLoading } = useRemoteData()
         watchEffect(() => {
           if (!isLoading.value) {
-            result.push(data.value)
+            result.push(data.value!)
           }
         })
         return () => {
@@ -235,7 +235,7 @@ describe('defineResource', () => {
       setup() {
         const { data } = useRemoteData()
         watchEffect(() => {
-          result.push(data.value)
+          result.push(data.value!)
         })
         return () => {
           return <div>data: {data.value}</div>
@@ -267,7 +267,7 @@ describe('defineResource', () => {
       setup() {
         const { data } = useRemoteData()
         watchEffect(() => {
-          result.push(data.value)
+          result.push(data.value!)
         })
         return () => {
           return <div>data: {data.value}</div>
