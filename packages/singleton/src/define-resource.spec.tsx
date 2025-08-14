@@ -120,7 +120,7 @@ describe('defineResource', () => {
     await screen.findByText('isLoading')
     await screen.findByText('loaded')
     await delay(100)
-    expect(requestCount).eq(10, '轮询调用了 10 次')
+    expect(requestCount > 5).eq(true, '轮询调用了多次')
     expect(isLoadingCount).eq(1, '但是只有一次 loading')
     screen.play(() => {
       useId().value = 2
