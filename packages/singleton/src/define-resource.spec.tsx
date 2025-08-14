@@ -1,9 +1,10 @@
 import { describe, expect, it } from 'vitest'
 import { defineResource } from './define-resource'
-import { defineComponent, nextTick, reactive, shallowRef } from 'vue'
+import { defineComponent, nextTick, reactive, shallowRef, watch, watchEffect } from 'vue'
 import { renderComponent } from '../test/render'
 import { define } from './define-singleton'
 import { delay } from '@cexoso/test-utils'
+import { waitFor } from '@testing-library/dom'
 
 describe('defineResource', () => {
   const useId = define(() => shallowRef(1))
@@ -85,5 +86,45 @@ describe('defineResource', () => {
     screen.play(() => (useVisibles().child2Visible = false))
     await delay(100)
     expect(i).eq(3, '请求数仍是 3 次，因为没有组件依赖数据源，数据源也停止更新了')
+  })
+
+  it('isLoading 相关描述, 轮询时静默', async () => {
+    const useId = define(() => {
+      return shallowRef(0)
+    })
+    let requestCount = 0
+    const useRemoteData = defineResource(
+      () => {
+        const id = useId()
+        return () => {
+          requestCount += 1
+          return Promise.resolve(id.value)
+        }
+      },
+      { interval: 10 }
+    )
+    let isLoadingCount = 0
+    const App = defineComponent({
+      setup() {
+        const { isLoading } = useRemoteData()
+        watchEffect(() => {
+          if (isLoading.value) {
+            isLoadingCount += 1
+          }
+        })
+        return () => <div>{isLoading.value ? 'isLoading' : 'loaded'}</div>
+      },
+    })
+
+    const screen = renderComponent(App)
+    await screen.findByText('isLoading')
+    await screen.findByText('loaded')
+    await delay(100)
+    expect(requestCount).eq(10, '轮询调用了 10 次')
+    expect(isLoadingCount).eq(1, '但是只有一次 loading')
+    screen.play(() => {
+      useId().value = 2
+    })
+    await waitFor(() => expect(isLoadingCount).eq(2, '通过响应式数据变更导致的请求，isLoading 会变更'))
   })
 })
