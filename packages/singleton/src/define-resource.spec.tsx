@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { defineResource } from './define-resource'
-import { defineComponent, nextTick, reactive, shallowRef, watch, watchEffect } from 'vue'
+import { defineComponent, nextTick, reactive, shallowRef, watchEffect } from 'vue'
 import { renderComponent } from '../test/render'
 import { define } from './define-singleton'
 import { delay } from '@cexoso/test-utils'
@@ -126,5 +126,46 @@ describe('defineResource', () => {
       useId().value = 2
     })
     await waitFor(() => expect(isLoadingCount).eq(2, '通过响应式数据变更导致的请求，isLoading 会变更'))
+  })
+
+  it('error 相关描述', async () => {
+    const useId = define(() => shallowRef(0))
+    let requestCount = 0
+    let isReturnError = false
+    const useRemoteData = defineResource(
+      () => {
+        const id = useId()
+        return () => {
+          requestCount += 1
+          if (isReturnError) {
+            return Promise.reject(new Error('error'))
+          }
+          return Promise.resolve(id.value)
+        }
+      },
+      { interval: 10 }
+    )
+    const App = defineComponent({
+      setup() {
+        const { error } = useRemoteData()
+        return () => {
+          return <div>{error.value ? (error.value as Error).message : 'success'}</div>
+        }
+      },
+    })
+
+    const screen = renderComponent(App)
+    await screen.findByText('success')
+    isReturnError = true
+    await delay(20)
+    // 静默更新数据情况下，如果请求出错也不会把错误返回，而是会使用之前的数据
+    // TODO: 这里是否要考虑明确错误如 network error，而不应该静默忽略掉所有的错误
+    await screen.findByText('success')
+
+    screen.play(() => {
+      useId().value = 2
+    })
+    // 由响应式数据引发请求，错误会正确的抛给用户
+    await screen.findByText('error')
   })
 })

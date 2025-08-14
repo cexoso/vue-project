@@ -43,7 +43,9 @@ export function defineResource<T>(
             data.value = result
           },
           (reason: unknown) => {
-            error.value = reason
+            if (!silent) {
+              error.value = reason
+            }
           }
         )
         .finally(() => {
