@@ -169,7 +169,7 @@ describe('defineResource', () => {
     await screen.findByText('error')
   })
 
-  it.only('数据竞态处理', async () => {
+  it('数据竞态处理', async () => {
     const useId = define(() => shallowRef(0))
     let callCount = 0
     const useRemoteData = defineResource(
