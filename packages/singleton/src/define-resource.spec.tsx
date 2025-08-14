@@ -10,9 +10,9 @@ describe('defineResource', () => {
   const useId = define(() => shallowRef(1))
   const useRemoteData = defineResource(() => {
     const id = useId()
-    return () => {
+    return async () => {
       const requestId = id.value
-      return Promise.resolve(requestId)
+      return delay(20).then(() => requestId)
     }
   })
   const App = defineComponent({
@@ -32,6 +32,7 @@ describe('defineResource', () => {
 
   it('依赖变更后，数据也会响应的变更', async () => {
     const screen = renderComponent(App)
+    await screen.findByText('data: 1')
     screen.play(() => {
       const id = useId()
       id.value = 10086
@@ -209,7 +210,81 @@ describe('defineResource', () => {
     screen.play(() => {
       useId().value += 1
     })
-    await delay(40)
-    expect(result).deep.eq([1, 3, 4, 5, 6], '第二次请求， 延时 20ms 的，这个请求后返回时应该被丢弃')
+    await delay(100) // 5ms 为了防止抖动
+    expect(result.slice(0, 5)).deep.eq(
+      [1, 3, 4, 5, 6],
+      '第二次请求， 延时 20ms 的，这个请求后返回时应该被丢弃'
+    )
+  })
+
+  it('主动请求的情况下，数据保留', async () => {
+    const useId = define(() => shallowRef(1))
+    const useRemoteData = defineResource(
+      () => {
+        const id = useId()
+        return async () => {
+          const x = id.value
+          return delay(20).then(() => x)
+        }
+      },
+      { retain: true }
+    )
+
+    let result: number[] = []
+    const App = defineComponent({
+      setup() {
+        const { data } = useRemoteData()
+        watchEffect(() => {
+          result.push(data.value)
+        })
+        return () => {
+          return <div>data: {data.value}</div>
+        }
+      },
+    })
+
+    const screen = renderComponent(App)
+    await screen.findByText('data: 1')
+    expect(result).deep.eq([undefined, 1])
+    screen.play(() => {
+      useId().value = 20
+    })
+    await screen.findByText('data: 20')
+    expect(result).deep.eq([undefined, 1, 20], 'retail 模式，会保留旧数据直到获取到新的数据')
+  })
+  it('主动请求的情况下，数据不保留', async () => {
+    const useId = define(() => shallowRef(1))
+    const useRemoteData = defineResource(() => {
+      const id = useId()
+      return async () => {
+        const x = id.value
+        return delay(20).then(() => x)
+      }
+    })
+
+    let result: number[] = []
+    const App = defineComponent({
+      setup() {
+        const { data } = useRemoteData()
+        watchEffect(() => {
+          result.push(data.value)
+        })
+        return () => {
+          return <div>data: {data.value}</div>
+        }
+      },
+    })
+
+    const screen = renderComponent(App)
+    await screen.findByText('data: 1')
+    expect(result).deep.eq([undefined, 1])
+    screen.play(() => {
+      useId().value = 20
+    })
+    await screen.findByText('data: 20')
+    expect(result).deep.eq(
+      [undefined, 1, undefined, 20],
+      '非 retail 模式，切换响应数据会立即将数据清空为 undefined'
+    )
   })
 })

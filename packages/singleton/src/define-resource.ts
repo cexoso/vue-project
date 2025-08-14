@@ -5,6 +5,11 @@ type Result<T> = Promise<T | undefined> | undefined
 interface Options {
   lazy?: boolean
   interval?: number
+  /**
+   * @description retain 表示是否保留不一致的数据，如果响应式数据变更，按道理来说已有的数据就不再是对应条件下查询出来的数据了
+   * 应该向使用者返回 isLoading: true，data: undefined, 但为了交互体验更好，使用 retain 可以在这种情况下保留数据
+   */
+  retain?: boolean
 }
 
 // 错误的原因不一定是 error, 这个要交给业务自己去判断
@@ -20,6 +25,7 @@ export function defineResource<T>(
   isLoading: ComputedRef<boolean>
   error: ComputedRef<REASON>
 } {
+  const retain = Boolean(opts?.retain)
   // 绑定到 application
   const useController = define(() => {
     let data = shallowRef<T | undefined>(undefined)
@@ -36,6 +42,9 @@ export function defineResource<T>(
       const silent = opts.silent
       if (!silent) {
         isLoading.value = true
+        if (!retain) {
+          data.value = undefined
+        }
       }
       stopLoop = true
 
