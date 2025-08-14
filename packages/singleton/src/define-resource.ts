@@ -26,7 +26,8 @@ export function defineResource<T>(
     let isLoading = shallowRef(false)
     let error = shallowRef<REASON>(undefined)
     const promiseComputed = promiseComputedCreator()
-
+    let requestId = 0
+    let stopLoop = false
     const requestAndHandle = async (opts: {
       // 静默更新，不是由人或者业务主动触发的更新，而是由 SWR 事件触发的更新为静默更新
       // 静默更新不会触发 isLoading true，仅会在拉取到新数据后直接替换掉数据
@@ -36,41 +37,60 @@ export function defineResource<T>(
       if (!silent) {
         isLoading.value = true
       }
+      stopLoop = true
 
+      requestId += 1
+      let reqId = requestId
       Promise.resolve(promiseComputed())
         .then(
           (result) => {
-            data.value = result
+            if (reqId === requestId) {
+              data.value = result
+            }
           },
           (reason: unknown) => {
-            if (!silent) {
+            if (!silent && reqId === requestId) {
               error.value = reason
             }
           }
         )
         .finally(() => {
           isLoading.value = false
+          restartLoop()
         })
     }
 
     watchEffect(() => {
       requestAndHandle({ silent: false })
-    }, {})
+    })
     let timeoutHandle: ReturnType<typeof setTimeout> | undefined
+    let loopInterval: number | undefined
 
-    const loop = (interval: number) => {
+    const restartLoop = () => {
+      stopLoop = false
+      if (timeoutHandle) {
+        clearTimeout(timeoutHandle)
+      }
+      loop()
+    }
+
+    const loop = () => {
+      if (stopLoop || loopInterval === undefined) {
+        return
+      }
       timeoutHandle = setTimeout(() => {
         requestAndHandle({ silent: true }).finally(() => {
-          loop(interval)
+          loop()
         })
-      }, interval)
+      }, loopInterval)
     }
     let rc = 0
 
     const startIntervalIfNeed = (interval: number | undefined) => {
       if (rc === 0) {
-        if (interval !== undefined && interval !== 0) {
-          loop(interval)
+        if (interval !== undefined) {
+          loopInterval = interval
+          loop()
         }
       }
       rc += 1

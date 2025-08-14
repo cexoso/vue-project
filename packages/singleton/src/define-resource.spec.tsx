@@ -168,4 +168,48 @@ describe('defineResource', () => {
     // 由响应式数据引发请求，错误会正确的抛给用户
     await screen.findByText('error')
   })
+
+  it.only('数据竞态处理', async () => {
+    const useId = define(() => shallowRef(0))
+    let callCount = 0
+    const useRemoteData = defineResource(
+      () => {
+        const id = useId()
+        return async () => {
+          callCount += 1
+          let count = callCount
+          if (id.value === 0) {
+            return delay(20).then(() => count)
+          }
+          return Promise.resolve(count)
+        }
+      },
+      { interval: 10 }
+    )
+    let result: number[] = []
+    const App = defineComponent({
+      setup() {
+        const { data, isLoading } = useRemoteData()
+        watchEffect(() => {
+          if (!isLoading.value) {
+            result.push(data.value)
+          }
+        })
+        return () => {
+          return <div>data: {data.value}</div>
+        }
+      },
+    })
+
+    const screen = renderComponent(App)
+    await delay(20) // 20ms 后一条数据返回
+    expect(result).deep.eq([1])
+    await delay(15) // 15ms 后一条新的请求
+    // 此时通过修改响应式数据主动发一次请求
+    screen.play(() => {
+      useId().value += 1
+    })
+    await delay(40)
+    expect(result).deep.eq([1, 3, 4, 5, 6], '第二次请求， 延时 20ms 的，这个请求后返回时应该被丢弃')
+  })
 })
