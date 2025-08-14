@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.8
+
+### Patch Changes
+
+- 805cefd: 添加定义资源的 api
+
 ## 0.0.7
 
 ### Patch Changes
