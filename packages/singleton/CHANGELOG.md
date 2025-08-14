@@ -1,5 +1,12 @@
 # @cexoso/vue-singleton
 
+## 0.0.10
+
+### Patch Changes
+
+- 9874e54: 兼容 runWithContext api 内调用
+- d3196f2: 声明更严格的类型，data 有可能是 undefined 的
+
 ## 0.0.9
 
 ### Patch Changes
