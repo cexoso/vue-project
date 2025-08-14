@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.9
+
+### Patch Changes
+
+- e2aeb1f: 新增 retain 模式，用于描述在数据变更时应该如何替换旧数据
+
 ## 0.0.8
 
 ### Patch Changes
