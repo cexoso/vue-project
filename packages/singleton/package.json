@@ -27,14 +27,17 @@
   "license": "MIT",
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
+    "@cexoso/test-utils": "workspace: *",
     "@cexoso/ts-pkg-build": "^0.0.23",
+    "@testing-library/dom": "^10.4.0",
+    "@types/sinon": "^17.0.4",
     "@vitejs/plugin-vue-jsx": "^5.0.1",
     "happy-dom": "^18.0.1",
+    "sinon": "^21.0.0",
     "typescript": "^5.5.4",
     "vite": "^7.0.5",
     "vitest": "^2.0.4",
-    "vue": "^3.5.18",
-    "@testing-library/dom": "^10.4.0"
+    "vue": "^3.5.18"
   },
   "peerDependencies": {
     "vue": "^3.0.0"

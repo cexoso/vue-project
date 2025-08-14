@@ -30,5 +30,8 @@ export const renderComponent = (component: Component) => {
   return {
     ...within(container),
     app,
+    play(cb: () => void) {
+      return app.runWithContext(cb)
+    },
   }
 }
