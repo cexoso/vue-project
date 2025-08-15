@@ -27,7 +27,6 @@ export class GitDiffReport extends ReportBase {
 
   onStart(_node: ReportNode, context: Context) {
     this.indexWriter = this.getWriterByPath(context, this.indexFile)
-    this.gitDiffWriter = this.getWriterByPath(context, this.diffFile)
   }
 
   getSource(node: ReportNode, context: Context) {
@@ -48,18 +47,18 @@ export class GitDiffReport extends ReportBase {
     }
   }
 
-  writeDiffFile() {
-    const cw = this.gitDiffWriter!
+  writeDiffFile(_node: ReportNode, context: Context) {
     const gitDiffTarget = process.env['git-diff-target']
     if (gitDiffTarget) {
       const content = getGitDiff(gitDiffTarget)
+      const cw = this.getWriterByPath(context, this.diffFile)
       cw.write(content)
     }
   }
 
-  onEnd() {
+  onEnd(node: ReportNode, context: Context) {
     const cw = this.indexWriter!
-    this.writeDiffFile()
+    this.writeDiffFile(node, context)
     cw.write(JSON.stringify(this.indexJSON, undefined, 2))
   }
 }
