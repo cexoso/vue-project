@@ -3,18 +3,15 @@
   "version": "0.0.1",
   "description": "",
   "publishConfig": {
-    "directory": "dist",
-    "linkDirectory": false
+    "linkDirectory": true
   },
   "scripts": {
     "test": "vitest --reporter=dot",
-    "build": "ts-pkg-build build --format ESM --format CommonJS",
     "prepublishOnly": "npm run build"
   },
   "exports": {
     "./tsconfig.node.json": "./src/tsconfig.node.json"
   },
-  "main": "./src/index.ts",
   "repository": "https://github.com/cexoso/vue-project",
   "sideEffects": false,
   "keywords": [],
