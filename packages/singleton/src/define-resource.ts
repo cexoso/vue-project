@@ -10,6 +10,10 @@ interface Options {
    * 应该向使用者返回 isLoading: true，data: undefined, 但为了交互体验更好，使用 retain 可以在这种情况下保留数据
    */
   retain?: boolean
+  /**
+   * @description retry 表示重试的次数，这个属性会影响主动请求的行为（不会影响轮询），当主动请求时，失败会立即发起重试，直到重试次数耗尽, 重试期间，isLoading 总是 true
+   */
+  retry?: number
 }
 
 // 错误的原因不一定是 error, 这个要交给业务自己去判断
@@ -26,6 +30,7 @@ export function defineResource<T>(
   error: ComputedRef<REASON | undefined>
 } {
   const retain = Boolean(opts?.retain)
+  const retry = opts?.retry ?? 0
   // 绑定到 application
   const useController = define(() => {
     let data = shallowRef<T | undefined>(undefined)
@@ -38,6 +43,7 @@ export function defineResource<T>(
       // 静默更新，不是由人或者业务主动触发的更新，而是由 SWR 事件触发的更新为静默更新
       // 静默更新不会触发 isLoading true，仅会在拉取到新数据后直接替换掉数据
       silent: boolean
+      retry: number
     }) => {
       const silent = opts.silent
       if (!silent) {
@@ -50,7 +56,16 @@ export function defineResource<T>(
 
       requestId += 1
       let reqId = requestId
-      Promise.resolve(promiseComputed())
+
+      async function justRequest(retry: number): Promise<T | undefined> {
+        const result = Promise.resolve(promiseComputed())
+        if (retry > 0) {
+          return result.catch(() => justRequest(retry - 1))
+        }
+        return result
+      }
+
+      justRequest(opts.retry)
         .then(
           (result) => {
             if (reqId === requestId) {
@@ -70,7 +85,7 @@ export function defineResource<T>(
     }
 
     watchEffect(() => {
-      requestAndHandle({ silent: false })
+      requestAndHandle({ silent: false, retry })
     })
     let timeoutHandle: ReturnType<typeof setTimeout> | undefined
     let loopInterval: number | undefined
@@ -88,7 +103,7 @@ export function defineResource<T>(
         return
       }
       timeoutHandle = setTimeout(() => {
-        requestAndHandle({ silent: true }).finally(() => {
+        requestAndHandle({ silent: true, retry: 0 }).finally(() => {
           loop()
         })
       }, loopInterval)
@@ -97,10 +112,8 @@ export function defineResource<T>(
 
     const startIntervalIfNeed = (interval: number | undefined) => {
       if (rc === 0) {
-        if (interval !== undefined) {
-          loopInterval = interval
-          loop()
-        }
+        loopInterval = interval
+        loop()
       }
       rc += 1
     }
@@ -118,8 +131,8 @@ export function defineResource<T>(
     const currentInstance = getCurrentInstance()
     const { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed } = useController()
     // 当组件产生依赖时， RC 加1
-    if (currentInstance) {
-      startIntervalIfNeed(opts?.interval)
+    if (currentInstance && opts?.interval !== undefined) {
+      startIntervalIfNeed(opts.interval)
       onUnmounted(() => {
         // 当组件卸载时， RC 减1
         stopIntervalIfNeed()

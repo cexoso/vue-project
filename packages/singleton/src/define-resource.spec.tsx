@@ -313,4 +313,72 @@ describe('defineResource', () => {
       expect(warnStub.callCount).eq(0)
     })
   })
+
+  it('retry 会重试到第一次请求成功', async () => {
+    let callCount = 0
+    let returnError = true
+    const useRemoteData = defineResource(
+      () => {
+        return async () => {
+          callCount += 1
+          return delay(10).then(() => (returnError ? Promise.reject(new Error('mock')) : 1))
+        }
+      },
+      { retry: 3 }
+    )
+    let loadings: boolean[] = []
+    const App = defineComponent({
+      setup() {
+        const remoteData = useRemoteData()
+        watchEffect(() => {
+          loadings.push(remoteData.isLoading.value)
+        })
+        return () => {
+          const data = remoteData.data.value
+          return <div>data: {data}</div>
+        }
+      },
+    })
+    renderComponent(App)
+    setTimeout(() => {
+      returnError = false
+    }, 15)
+    await delay(50)
+    expect(callCount).eq(2, '包括第一次请求，一起请求了2次')
+    expect(loadings).deep.eq([true, false], '只会存在一次 isLoading 切换, 重试对于应用是无感的')
+  })
+
+  it('retry 重试一直不成功，就会返回 error', async () => {
+    let callCount = 0
+    const useRemoteData = defineResource(
+      () => {
+        return async () => {
+          callCount += 1
+          return delay(10).then(() => Promise.reject(new Error('mock')))
+        }
+      },
+      { retry: 3 }
+    )
+    let errors: any[] = []
+    const App = defineComponent({
+      setup() {
+        const remoteData = useRemoteData()
+        watchEffect(() => {
+          errors.push(remoteData.error.value)
+        })
+        return () => {
+          const data = remoteData.data.value
+          return <div>data: {data}</div>
+        }
+      },
+    })
+    renderComponent(App)
+    await delay(50)
+    expect(errors).toMatchInlineSnapshot(`
+      [
+        undefined,
+        [Error: mock],
+      ]
+    `)
+  })
 })
