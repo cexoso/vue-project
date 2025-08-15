@@ -13,16 +13,19 @@
   },
   "dependencies": {
     "istanbul-lib-report": "^3.0.1",
+    "shelljs": "^0.10.0",
     "tslib": "^2.8.1"
   },
   "devDependencies": {
+    "@cexoso/configs": "workspace: *",
     "@cexoso/ts-pkg-build": "^0.0.19",
     "@types/istanbul-lib-coverage": "^2.0.6",
     "@types/istanbul-lib-report": "^3.0.3",
     "@types/istanbul-lib-source-maps": "^4.0.4",
     "@types/istanbul-reports": "^3.0.4",
     "@types/node": "^22.14.0",
-    "typescript": "^5.8.3",
-    "@cexoso/configs": "workspace: *"
+    "@types/shelljs": "^0.8.17",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
   }
 }

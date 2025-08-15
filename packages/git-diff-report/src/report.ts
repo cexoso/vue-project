@@ -1,6 +1,7 @@
 import type { FileContentWriter } from 'istanbul-lib-report'
 import { ReportBase, type ReportNode, type Context } from 'istanbul-lib-report'
 import { join } from 'node:path'
+import { getGitDiff } from './get-git-diff'
 
 const getRelativePath = (node: ReportNode) => {
   // @ts-ignore
@@ -9,8 +10,10 @@ const getRelativePath = (node: ReportNode) => {
 }
 
 export class GitDiffReport extends ReportBase {
-  indexFile = 'index.json'
+  indexFile = 'api/coverage-data'
+  diffFile = 'api/diff'
   indexWriter: FileContentWriter | undefined
+  gitDiffWriter: FileContentWriter | undefined
   indexJSON: Record<string, any> = {}
   getWriterByPath(context: Context, path: string): FileContentWriter {
     return context.writer.writeFile(path) as FileContentWriter
@@ -24,6 +27,7 @@ export class GitDiffReport extends ReportBase {
 
   onStart(_node: ReportNode, context: Context) {
     this.indexWriter = this.getWriterByPath(context, this.indexFile)
+    this.gitDiffWriter = this.getWriterByPath(context, this.diffFile)
   }
 
   getSource(node: ReportNode, context: Context) {
@@ -44,8 +48,18 @@ export class GitDiffReport extends ReportBase {
     }
   }
 
+  writeDiffFile() {
+    const cw = this.gitDiffWriter!
+    const gitDiffTarget = process.env['git-diff-target']
+    if (gitDiffTarget) {
+      const content = getGitDiff(gitDiffTarget)
+      cw.write(content)
+    }
+  }
+
   onEnd() {
     const cw = this.indexWriter!
+    this.writeDiffFile()
     cw.write(JSON.stringify(this.indexJSON, undefined, 2))
   }
 }
