@@ -28,6 +28,7 @@ export function defineResource<T>(
   data: ComputedRef<T | undefined>
   isLoading: ComputedRef<boolean>
   error: ComputedRef<REASON | undefined>
+  refresh: (silent?: boolean) => Promise<T | undefined> // refresh 可以用于触发一次请求，并且返回这次触发请求响应的结果
 } {
   const retain = Boolean(opts?.retain)
   const retry = opts?.retry ?? 0
@@ -65,7 +66,8 @@ export function defineResource<T>(
         return result
       }
 
-      justRequest(opts.retry)
+      const result = justRequest(opts.retry)
+      result
         .then(
           (result) => {
             if (reqId === requestId) {
@@ -82,10 +84,11 @@ export function defineResource<T>(
           isLoading.value = false
           restartLoop()
         })
+      return result
     }
 
     watchEffect(() => {
-      requestAndHandle({ silent: false, retry })
+      requestAndHandle({ silent: false, retry }).catch(() => {})
     })
     let timeoutHandle: ReturnType<typeof setTimeout> | undefined
     let loopInterval: number | undefined
@@ -103,9 +106,9 @@ export function defineResource<T>(
         return
       }
       timeoutHandle = setTimeout(() => {
-        requestAndHandle({ silent: true, retry: 0 }).finally(() => {
-          loop()
-        })
+        if (!stopLoop) {
+          requestAndHandle({ silent: true, retry: 0 }).catch(() => {})
+        }
       }, loopInterval)
     }
     let rc = 0
@@ -124,12 +127,15 @@ export function defineResource<T>(
       }
     }
 
-    return { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed }
+    const refresh = async (silent = true) => {
+      return requestAndHandle({ silent, retry: 0 })
+    }
+    return { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed, refresh }
   })
 
   const useData = () => {
     const currentInstance = getCurrentInstance()
-    const { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed } = useController()
+    const { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed, refresh } = useController()
     // 当组件产生依赖时， RC 加1
     if (currentInstance && opts?.interval !== undefined) {
       startIntervalIfNeed(opts.interval)
@@ -150,6 +156,7 @@ export function defineResource<T>(
       error: computed(() => {
         return error.value
       }),
+      refresh,
     }
   }
   return useData

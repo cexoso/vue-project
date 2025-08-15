@@ -381,4 +381,29 @@ describe('defineResource', () => {
       ]
     `)
   })
+
+  it('提供 refresh 方法，这个方法的作用是不改变响应式数据的情况下主动发起请求', async () => {
+    let result = 1
+    const useRemoteData = defineResource(() => async () => delay(10).then(() => result))
+
+    const App = defineComponent({
+      setup() {
+        const remoteData = useRemoteData()
+        return () => {
+          const data = remoteData.data.value
+          const error = remoteData.error.value
+          return error ? <div>error</div> : <div>data: {data}</div>
+        }
+      },
+    })
+    const screen = renderComponent(App)
+    await screen.findByText('data: 1')
+    result = 2
+    const x = screen.play(() => {
+      const { refresh } = useRemoteData()
+      return refresh()
+    })
+    await screen.findByText('data: 2')
+    expect(await x).eq(2)
+  })
 })
