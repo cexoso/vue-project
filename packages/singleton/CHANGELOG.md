@@ -1,5 +1,12 @@
 # @cexoso/vue-singleton
 
+## 0.0.11
+
+### Patch Changes
+
+- d2e4c03: 添加 retry 能力
+- 51aba1e: 提供 refresh 方法，该方法可以主动调用以重新发起请求
+
 ## 0.0.10
 
 ### Patch Changes
