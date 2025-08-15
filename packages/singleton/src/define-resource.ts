@@ -3,7 +3,6 @@ import { define } from './define-singleton'
 
 type Result<T> = Promise<T | undefined> | undefined
 interface Options {
-  lazy?: boolean
   interval?: number
   /**
    * @description retain 表示是否保留不一致的数据，如果响应式数据变更，按道理来说已有的数据就不再是对应条件下查询出来的数据了
