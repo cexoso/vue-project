@@ -1,0 +1,3 @@
+{
+  "extends": "@cexoso/configs/tsconfig.node.json"
+}
