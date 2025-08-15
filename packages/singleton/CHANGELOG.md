@@ -1,5 +1,12 @@
 # @cexoso/vue-singleton
 
+## 0.0.12
+
+### Patch Changes
+
+- 271ebfa: write README with my poor english
+- f4ebccb: 去掉没有提供能力的参数
+
 ## 0.0.11
 
 ### Patch Changes
