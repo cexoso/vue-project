@@ -23,6 +23,7 @@ export class GitDiffReport extends ReportBase {
     this.hasUpdateProjectRoot = true
     while (dir !== '/') {
       if (join(dir, path) === node.fileCoverage.path) {
+        this.projectRoot = dir
         return
       }
       dir = dirname(dir)
