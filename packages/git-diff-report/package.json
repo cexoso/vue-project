@@ -1,30 +1,32 @@
 {
   "name": "@cexoso/git-diff-report",
   "version": "0.0.1",
-  "publishConfig": {
-    "directory": "dist",
-    "linkDirectory": false
-  },
-  "main": "./src/index.ts",
+  "main": "./dist/index.cjs",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "build": "ts-pkg-build build --format CommonJS",
+    "build": "pkgroll",
+    "dev": "pkgroll --watch",
     "prepublishOnly": "npm run build"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "istanbul-lib-report": "^3.0.1",
     "shelljs": "^0.10.0",
-    "tslib": "^2.8.1"
+    "tslib": "^2.8.1",
+    "@types/istanbul-lib-report": "^3.0.3",
+    "@types/shelljs": "^0.8.17",
+    "@cexoso/diff-template": "workspace: *"
   },
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
-    "@cexoso/ts-pkg-build": "^0.0.19",
     "@types/istanbul-lib-coverage": "^2.0.6",
-    "@types/istanbul-lib-report": "^3.0.3",
     "@types/istanbul-lib-source-maps": "^4.0.4",
     "@types/istanbul-reports": "^3.0.4",
     "@types/node": "^22.14.0",
-    "@types/shelljs": "^0.8.17",
+    "pkgroll": "^2.15.3",
+    "tsup": "^8.5.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.3"
   }

@@ -1,0 +1,38 @@
+.branch-tag {
+  background-color: #333;
+  text-shadow: none;
+  padding: 0 4px;
+  border-radius: 3px;
+  margin-right: 5px;
+  color: yellow;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.branch-expr-tag {
+  background-color: #fde2b5;
+  text-shadow: none;
+}
+
+.branch-expr-tag * {
+  /* 修复 prism 对 operator 添加了 background-color hsla(0, 0%, 100%, .5) 造成标记看起来断截的问题 */
+  background-color: initial !important;
+}
+
+.function-tag {
+  background-color: #ccd162;
+  text-shadow: none;
+}
+.function-tag * {
+  background-color: initial !important;
+}
+
+.statement-tag {
+  background-color: #f6c6ce;
+  text-shadow: none;
+}
+
+.statement-tag * {
+  /* 修复 prism 对 operator 添加了 background-color hsla(0, 0%, 100%, .5) 造成标记看起来断截的问题 */
+  background-color: initial !important;
+}

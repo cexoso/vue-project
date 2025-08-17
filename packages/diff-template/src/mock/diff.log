@@ -1,0 +1,4017 @@
+diff --git a/packages/singleton/coverage/api/coverage-data b/packages/singleton/coverage/api/coverage-data
+index 8402acf..e69de29 100644
+--- a/packages/singleton/coverage/api/coverage-data
++++ b/packages/singleton/coverage/api/coverage-data
+@@ -1,3964 +0,0 @@
+-{
+-  "context.ts": {
+-    "coverage": {
+-      "path": "/Users/xiongjie/github/vue-project/packages/singleton/src/context.ts",
+-      "all": false,
+-      "statementMap": {
+-        "0": {
+-          "start": {
+-            "line": 1,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 1,
+-            "column": 49
+-          }
+-        },
+-        "2": {
+-          "start": {
+-            "line": 3,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 3,
+-            "column": 34
+-          }
+-        },
+-        "17": {
+-          "start": {
+-            "line": 18,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 18,
+-            "column": 33
+-          }
+-        },
+-        "18": {
+-          "start": {
+-            "line": 19,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 19,
+-            "column": 45
+-          }
+-        },
+-        "19": {
+-          "start": {
+-            "line": 20,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 20,
+-            "column": 30
+-          }
+-        },
+-        "20": {
+-          "start": {
+-            "line": 21,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 21,
+-            "column": 20
+-          }
+-        },
+-        "21": {
+-          "start": {
+-            "line": 22,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 22,
+-            "column": 60
+-          }
+-        },
+-        "24": {
+-          "start": {
+-            "line": 25,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 25,
+-            "column": 5
+-          }
+-        },
+-        "25": {
+-          "start": {
+-            "line": 26,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 26,
+-            "column": 3
+-          }
+-        },
+-        "26": {
+-          "start": {
+-            "line": 27,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 27,
+-            "column": 16
+-          }
+-        },
+-        "27": {
+-          "start": {
+-            "line": 28,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 28,
+-            "column": 1
+-          }
+-        },
+-        "29": {
+-          "start": {
+-            "line": 30,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 30,
+-            "column": 44
+-          }
+-        },
+-        "30": {
+-          "start": {
+-            "line": 31,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 31,
+-            "column": 10
+-          }
+-        },
+-        "31": {
+-          "start": {
+-            "line": 32,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 32,
+-            "column": 18
+-          }
+-        },
+-        "32": {
+-          "start": {
+-            "line": 33,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 33,
+-            "column": 36
+-          }
+-        },
+-        "33": {
+-          "start": {
+-            "line": 34,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 34,
+-            "column": 39
+-          }
+-        },
+-        "34": {
+-          "start": {
+-            "line": 35,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 35,
+-            "column": 27
+-          }
+-        },
+-        "35": {
+-          "start": {
+-            "line": 36,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 36,
+-            "column": 49
+-          }
+-        },
+-        "36": {
+-          "start": {
+-            "line": 37,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 37,
+-            "column": 65
+-          }
+-        },
+-        "37": {
+-          "start": {
+-            "line": 38,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 38,
+-            "column": 9
+-          }
+-        },
+-        "38": {
+-          "start": {
+-            "line": 39,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 39,
+-            "column": 39
+-          }
+-        },
+-        "39": {
+-          "start": {
+-            "line": 40,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 40,
+-            "column": 7
+-          }
+-        },
+-        "40": {
+-          "start": {
+-            "line": 41,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 41,
+-            "column": 40
+-          }
+-        },
+-        "41": {
+-          "start": {
+-            "line": 42,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 42,
+-            "column": 14
+-          }
+-        },
+-        "42": {
+-          "start": {
+-            "line": 43,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 43,
+-            "column": 8
+-          }
+-        },
+-        "43": {
+-          "start": {
+-            "line": 44,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 44,
+-            "column": 6
+-          }
+-        },
+-        "44": {
+-          "start": {
+-            "line": 45,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 45,
+-            "column": 3
+-          }
+-        },
+-        "45": {
+-          "start": {
+-            "line": 46,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 46,
+-            "column": 1
+-          }
+-        }
+-      },
+-      "s": {
+-        "0": 1,
+-        "2": 1,
+-        "17": 1,
+-        "18": 40,
+-        "19": 40,
+-        "20": 0,
+-        "21": 0,
+-        "24": 0,
+-        "25": 0,
+-        "26": 40,
+-        "27": 40,
+-        "29": 1,
+-        "30": 15,
+-        "31": 15,
+-        "32": 15,
+-        "33": 15,
+-        "34": 15,
+-        "35": 13,
+-        "36": 24,
+-        "37": 24,
+-        "38": 13,
+-        "39": 13,
+-        "40": 15,
+-        "41": 15,
+-        "42": 15,
+-        "43": 15,
+-        "44": 15,
+-        "45": 15
+-      },
+-      "branchMap": {
+-        "0": {
+-          "type": "branch",
+-          "line": 18,
+-          "loc": {
+-            "start": {
+-              "line": 18,
+-              "column": 26
+-            },
+-            "end": {
+-              "line": 28,
+-              "column": 1
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 18,
+-                "column": 26
+-              },
+-              "end": {
+-                "line": 28,
+-                "column": 1
+-              }
+-            }
+-          ]
+-        },
+-        "1": {
+-          "type": "branch",
+-          "line": 20,
+-          "loc": {
+-            "start": {
+-              "line": 20,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 26,
+-              "column": 3
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 20,
+-                "column": 29
+-              },
+-              "end": {
+-                "line": 26,
+-                "column": 3
+-              }
+-            }
+-          ]
+-        },
+-        "2": {
+-          "type": "branch",
+-          "line": 30,
+-          "loc": {
+-            "start": {
+-              "line": 30,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 46,
+-              "column": 1
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 30,
+-                "column": 29
+-              },
+-              "end": {
+-                "line": 46,
+-                "column": 1
+-              }
+-            }
+-          ]
+-        },
+-        "3": {
+-          "type": "branch",
+-          "line": 32,
+-          "loc": {
+-            "start": {
+-              "line": 32,
+-              "column": 4
+-            },
+-            "end": {
+-              "line": 44,
+-              "column": 6
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 32,
+-                "column": 4
+-              },
+-              "end": {
+-                "line": 44,
+-                "column": 6
+-              }
+-            }
+-          ]
+-        },
+-        "4": {
+-          "type": "branch",
+-          "line": 35,
+-          "loc": {
+-            "start": {
+-              "line": 35,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 40,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 35,
+-                "column": 20
+-              },
+-              "end": {
+-                "line": 40,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "5": {
+-          "type": "branch",
+-          "line": 36,
+-          "loc": {
+-            "start": {
+-              "line": 36,
+-              "column": 48
+-            },
+-            "end": {
+-              "line": 38,
+-              "column": 9
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 36,
+-                "column": 48
+-              },
+-              "end": {
+-                "line": 38,
+-                "column": 9
+-              }
+-            }
+-          ]
+-        }
+-      },
+-      "b": {
+-        "0": [
+-          40
+-        ],
+-        "1": [
+-          0
+-        ],
+-        "2": [
+-          15
+-        ],
+-        "3": [
+-          15
+-        ],
+-        "4": [
+-          13
+-        ],
+-        "5": [
+-          24
+-        ]
+-      },
+-      "fnMap": {
+-        "0": {
+-          "name": "useContext",
+-          "decl": {
+-            "start": {
+-              "line": 18,
+-              "column": 26
+-            },
+-            "end": {
+-              "line": 28,
+-              "column": 1
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 18,
+-              "column": 26
+-            },
+-            "end": {
+-              "line": 28,
+-              "column": 1
+-            }
+-          },
+-          "line": 18
+-        },
+-        "1": {
+-          "name": "createContext",
+-          "decl": {
+-            "start": {
+-              "line": 30,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 46,
+-              "column": 1
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 30,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 46,
+-              "column": 1
+-            }
+-          },
+-          "line": 30
+-        },
+-        "2": {
+-          "name": "install",
+-          "decl": {
+-            "start": {
+-              "line": 32,
+-              "column": 4
+-            },
+-            "end": {
+-              "line": 44,
+-              "column": 6
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 32,
+-              "column": 4
+-            },
+-            "end": {
+-              "line": 44,
+-              "column": 6
+-            }
+-          },
+-          "line": 32
+-        },
+-        "3": {
+-          "name": "app.unmount",
+-          "decl": {
+-            "start": {
+-              "line": 35,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 40,
+-              "column": 7
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 35,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 40,
+-              "column": 7
+-            }
+-          },
+-          "line": 35
+-        }
+-      },
+-      "f": {
+-        "0": 40,
+-        "1": 15,
+-        "2": 15,
+-        "3": 13
+-      }
+-    },
+-    "source": "import { EffectScope, Plugin, inject } from 'vue'\n\nexport const ContextKey = Symbol()\n\ntype Hooks = () => unknown\ntype Store = Map<\n  Hooks,\n  {\n    cacheValue: unknown\n    scope: EffectScope\n  }\n>\n\nexport interface Context {\n  store: Store\n}\n\nexport const useContext = () => {\n  const context = inject<Context>(ContextKey)\n  if (context === undefined) {\n    throw new Error(\n      'The possible reasons for the current error are: \\n' +\n        '1) You need to use use(createContext()) to create a context when creating the app\\n' +\n        '2) Hooks functions can only be called within the setup function.'\n    )\n  }\n  return context\n}\n\nexport const createContext = (): Plugin => {\n  return {\n    install(app) {\n      const store: Store = new Map()\n      const originUnmount = app.unmount\n      app.unmount = () => {\n        for (const { scope } of store.values()) {\n          scope.stop() // 在 app 卸载的时候，需要关掉 scope，让 effect 和依赖追踪释放\n        }\n        return originUnmount.apply(app)\n      }\n      app.provide<Context>(ContextKey, {\n        store,\n      })\n    },\n  }\n}\n"
+-  },
+-  "define-resource.ts": {
+-    "coverage": {
+-      "path": "/Users/xiongjie/github/vue-project/packages/singleton/src/define-resource.ts",
+-      "all": false,
+-      "statementMap": {
+-        "0": {
+-          "start": {
+-            "line": 1,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 1,
+-            "column": 101
+-          }
+-        },
+-        "22": {
+-          "start": {
+-            "line": 23,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 23,
+-            "column": 34
+-          }
+-        },
+-        "23": {
+-          "start": {
+-            "line": 24,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 24,
+-            "column": 48
+-          }
+-        },
+-        "24": {
+-          "start": {
+-            "line": 25,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 25,
+-            "column": 16
+-          }
+-        },
+-        "30": {
+-          "start": {
+-            "line": 31,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 31,
+-            "column": 3
+-          }
+-        },
+-        "31": {
+-          "start": {
+-            "line": 32,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 32,
+-            "column": 38
+-          }
+-        },
+-        "32": {
+-          "start": {
+-            "line": 33,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 33,
+-            "column": 32
+-          }
+-        },
+-        "34": {
+-          "start": {
+-            "line": 35,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 35,
+-            "column": 38
+-          }
+-        },
+-        "35": {
+-          "start": {
+-            "line": 36,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 36,
+-            "column": 51
+-          }
+-        },
+-        "36": {
+-          "start": {
+-            "line": 37,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 37,
+-            "column": 37
+-          }
+-        },
+-        "37": {
+-          "start": {
+-            "line": 38,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 38,
+-            "column": 45
+-          }
+-        },
+-        "38": {
+-          "start": {
+-            "line": 39,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 39,
+-            "column": 52
+-          }
+-        },
+-        "39": {
+-          "start": {
+-            "line": 40,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 40,
+-            "column": 21
+-          }
+-        },
+-        "40": {
+-          "start": {
+-            "line": 41,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 41,
+-            "column": 24
+-          }
+-        },
+-        "41": {
+-          "start": {
+-            "line": 42,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 42,
+-            "column": 43
+-          }
+-        },
+-        "46": {
+-          "start": {
+-            "line": 47,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 47,
+-            "column": 11
+-          }
+-        },
+-        "47": {
+-          "start": {
+-            "line": 48,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 48,
+-            "column": 32
+-          }
+-        },
+-        "48": {
+-          "start": {
+-            "line": 49,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 49,
+-            "column": 20
+-          }
+-        },
+-        "49": {
+-          "start": {
+-            "line": 50,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 50,
+-            "column": 30
+-          }
+-        },
+-        "50": {
+-          "start": {
+-            "line": 51,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 51,
+-            "column": 22
+-          }
+-        },
+-        "51": {
+-          "start": {
+-            "line": 52,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 52,
+-            "column": 32
+-          }
+-        },
+-        "52": {
+-          "start": {
+-            "line": 53,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 53,
+-            "column": 9
+-          }
+-        },
+-        "53": {
+-          "start": {
+-            "line": 54,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 54,
+-            "column": 7
+-          }
+-        },
+-        "54": {
+-          "start": {
+-            "line": 55,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 55,
+-            "column": 21
+-          }
+-        },
+-        "56": {
+-          "start": {
+-            "line": 57,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 57,
+-            "column": 20
+-          }
+-        },
+-        "57": {
+-          "start": {
+-            "line": 58,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 58,
+-            "column": 27
+-          }
+-        },
+-        "59": {
+-          "start": {
+-            "line": 60,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 60,
+-            "column": 73
+-          }
+-        },
+-        "60": {
+-          "start": {
+-            "line": 61,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 61,
+-            "column": 57
+-          }
+-        },
+-        "61": {
+-          "start": {
+-            "line": 62,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 62,
+-            "column": 24
+-          }
+-        },
+-        "62": {
+-          "start": {
+-            "line": 63,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 63,
+-            "column": 59
+-          }
+-        },
+-        "63": {
+-          "start": {
+-            "line": 64,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 64,
+-            "column": 9
+-          }
+-        },
+-        "64": {
+-          "start": {
+-            "line": 65,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 65,
+-            "column": 21
+-          }
+-        },
+-        "65": {
+-          "start": {
+-            "line": 66,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 66,
+-            "column": 7
+-          }
+-        },
+-        "67": {
+-          "start": {
+-            "line": 68,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 68,
+-            "column": 44
+-          }
+-        },
+-        "68": {
+-          "start": {
+-            "line": 69,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 69,
+-            "column": 12
+-          }
+-        },
+-        "69": {
+-          "start": {
+-            "line": 70,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 70,
+-            "column": 14
+-          }
+-        },
+-        "70": {
+-          "start": {
+-            "line": 71,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 71,
+-            "column": 23
+-          }
+-        },
+-        "71": {
+-          "start": {
+-            "line": 72,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 72,
+-            "column": 38
+-          }
+-        },
+-        "72": {
+-          "start": {
+-            "line": 73,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 73,
+-            "column": 33
+-          }
+-        },
+-        "73": {
+-          "start": {
+-            "line": 74,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 74,
+-            "column": 13
+-          }
+-        },
+-        "74": {
+-          "start": {
+-            "line": 75,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 75,
+-            "column": 12
+-          }
+-        },
+-        "75": {
+-          "start": {
+-            "line": 76,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 76,
+-            "column": 32
+-          }
+-        },
+-        "76": {
+-          "start": {
+-            "line": 77,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 77,
+-            "column": 49
+-          }
+-        },
+-        "77": {
+-          "start": {
+-            "line": 78,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 78,
+-            "column": 34
+-          }
+-        },
+-        "78": {
+-          "start": {
+-            "line": 79,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 79,
+-            "column": 13
+-          }
+-        },
+-        "79": {
+-          "start": {
+-            "line": 80,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 80,
+-            "column": 11
+-          }
+-        },
+-        "80": {
+-          "start": {
+-            "line": 81,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 81,
+-            "column": 9
+-          }
+-        },
+-        "81": {
+-          "start": {
+-            "line": 82,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 82,
+-            "column": 24
+-          }
+-        },
+-        "82": {
+-          "start": {
+-            "line": 83,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 83,
+-            "column": 33
+-          }
+-        },
+-        "83": {
+-          "start": {
+-            "line": 84,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 84,
+-            "column": 23
+-          }
+-        },
+-        "84": {
+-          "start": {
+-            "line": 85,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 85,
+-            "column": 10
+-          }
+-        },
+-        "85": {
+-          "start": {
+-            "line": 86,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 86,
+-            "column": 19
+-          }
+-        },
+-        "86": {
+-          "start": {
+-            "line": 87,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 87,
+-            "column": 5
+-          }
+-        },
+-        "88": {
+-          "start": {
+-            "line": 89,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 89,
+-            "column": 23
+-          }
+-        },
+-        "89": {
+-          "start": {
+-            "line": 90,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 90,
+-            "column": 64
+-          }
+-        },
+-        "90": {
+-          "start": {
+-            "line": 91,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 91,
+-            "column": 6
+-          }
+-        },
+-        "91": {
+-          "start": {
+-            "line": 92,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 92,
+-            "column": 64
+-          }
+-        },
+-        "92": {
+-          "start": {
+-            "line": 93,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 93,
+-            "column": 40
+-          }
+-        },
+-        "94": {
+-          "start": {
+-            "line": 95,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 95,
+-            "column": 31
+-          }
+-        },
+-        "95": {
+-          "start": {
+-            "line": 96,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 96,
+-            "column": 22
+-          }
+-        },
+-        "96": {
+-          "start": {
+-            "line": 97,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 97,
+-            "column": 26
+-          }
+-        },
+-        "97": {
+-          "start": {
+-            "line": 98,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 98,
+-            "column": 35
+-          }
+-        },
+-        "98": {
+-          "start": {
+-            "line": 99,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 99,
+-            "column": 7
+-          }
+-        },
+-        "99": {
+-          "start": {
+-            "line": 100,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 100,
+-            "column": 12
+-          }
+-        },
+-        "100": {
+-          "start": {
+-            "line": 101,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 101,
+-            "column": 5
+-          }
+-        },
+-        "102": {
+-          "start": {
+-            "line": 103,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 103,
+-            "column": 24
+-          }
+-        },
+-        "103": {
+-          "start": {
+-            "line": 104,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 104,
+-            "column": 51
+-          }
+-        },
+-        "104": {
+-          "start": {
+-            "line": 105,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 105,
+-            "column": 14
+-          }
+-        },
+-        "105": {
+-          "start": {
+-            "line": 106,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 106,
+-            "column": 7
+-          }
+-        },
+-        "106": {
+-          "start": {
+-            "line": 107,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 107,
+-            "column": 40
+-          }
+-        },
+-        "107": {
+-          "start": {
+-            "line": 108,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 108,
+-            "column": 24
+-          }
+-        },
+-        "108": {
+-          "start": {
+-            "line": 109,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 109,
+-            "column": 70
+-          }
+-        },
+-        "109": {
+-          "start": {
+-            "line": 110,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 110,
+-            "column": 9
+-          }
+-        },
+-        "110": {
+-          "start": {
+-            "line": 111,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 111,
+-            "column": 22
+-          }
+-        },
+-        "111": {
+-          "start": {
+-            "line": 112,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 112,
+-            "column": 5
+-          }
+-        },
+-        "112": {
+-          "start": {
+-            "line": 113,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 113,
+-            "column": 14
+-          }
+-        },
+-        "114": {
+-          "start": {
+-            "line": 115,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 115,
+-            "column": 67
+-          }
+-        },
+-        "115": {
+-          "start": {
+-            "line": 116,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 116,
+-            "column": 21
+-          }
+-        },
+-        "116": {
+-          "start": {
+-            "line": 117,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 117,
+-            "column": 31
+-          }
+-        },
+-        "117": {
+-          "start": {
+-            "line": 118,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 118,
+-            "column": 14
+-          }
+-        },
+-        "118": {
+-          "start": {
+-            "line": 119,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 119,
+-            "column": 7
+-          }
+-        },
+-        "119": {
+-          "start": {
+-            "line": 120,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 120,
+-            "column": 13
+-          }
+-        },
+-        "120": {
+-          "start": {
+-            "line": 121,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 121,
+-            "column": 5
+-          }
+-        },
+-        "121": {
+-          "start": {
+-            "line": 122,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 122,
+-            "column": 38
+-          }
+-        },
+-        "122": {
+-          "start": {
+-            "line": 123,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 123,
+-            "column": 13
+-          }
+-        },
+-        "123": {
+-          "start": {
+-            "line": 124,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 124,
+-            "column": 21
+-          }
+-        },
+-        "124": {
+-          "start": {
+-            "line": 125,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 125,
+-            "column": 35
+-          }
+-        },
+-        "125": {
+-          "start": {
+-            "line": 126,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 126,
+-            "column": 7
+-          }
+-        },
+-        "126": {
+-          "start": {
+-            "line": 127,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 127,
+-            "column": 5
+-          }
+-        },
+-        "128": {
+-          "start": {
+-            "line": 129,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 129,
+-            "column": 46
+-          }
+-        },
+-        "129": {
+-          "start": {
+-            "line": 130,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 130,
+-            "column": 51
+-          }
+-        },
+-        "130": {
+-          "start": {
+-            "line": 131,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 131,
+-            "column": 5
+-          }
+-        },
+-        "131": {
+-          "start": {
+-            "line": 132,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 132,
+-            "column": 87
+-          }
+-        },
+-        "132": {
+-          "start": {
+-            "line": 133,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 133,
+-            "column": 4
+-          }
+-        },
+-        "134": {
+-          "start": {
+-            "line": 135,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 135,
+-            "column": 25
+-          }
+-        },
+-        "135": {
+-          "start": {
+-            "line": 136,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 136,
+-            "column": 48
+-          }
+-        },
+-        "136": {
+-          "start": {
+-            "line": 137,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 137,
+-            "column": 104
+-          }
+-        },
+-        "138": {
+-          "start": {
+-            "line": 139,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 139,
+-            "column": 58
+-          }
+-        },
+-        "139": {
+-          "start": {
+-            "line": 140,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 140,
+-            "column": 40
+-          }
+-        },
+-        "140": {
+-          "start": {
+-            "line": 141,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 141,
+-            "column": 25
+-          }
+-        },
+-        "142": {
+-          "start": {
+-            "line": 143,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 143,
+-            "column": 28
+-          }
+-        },
+-        "143": {
+-          "start": {
+-            "line": 144,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 144,
+-            "column": 8
+-          }
+-        },
+-        "144": {
+-          "start": {
+-            "line": 145,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 145,
+-            "column": 5
+-          }
+-        },
+-        "147": {
+-          "start": {
+-            "line": 148,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 148,
+-            "column": 12
+-          }
+-        },
+-        "148": {
+-          "start": {
+-            "line": 149,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 149,
+-            "column": 28
+-          }
+-        },
+-        "149": {
+-          "start": {
+-            "line": 150,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 150,
+-            "column": 25
+-          }
+-        },
+-        "150": {
+-          "start": {
+-            "line": 151,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 151,
+-            "column": 9
+-          }
+-        },
+-        "151": {
+-          "start": {
+-            "line": 152,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 152,
+-            "column": 33
+-          }
+-        },
+-        "152": {
+-          "start": {
+-            "line": 153,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 153,
+-            "column": 30
+-          }
+-        },
+-        "153": {
+-          "start": {
+-            "line": 154,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 154,
+-            "column": 9
+-          }
+-        },
+-        "154": {
+-          "start": {
+-            "line": 155,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 155,
+-            "column": 29
+-          }
+-        },
+-        "155": {
+-          "start": {
+-            "line": 156,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 156,
+-            "column": 26
+-          }
+-        },
+-        "156": {
+-          "start": {
+-            "line": 157,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 157,
+-            "column": 9
+-          }
+-        },
+-        "157": {
+-          "start": {
+-            "line": 158,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 158,
+-            "column": 14
+-          }
+-        },
+-        "158": {
+-          "start": {
+-            "line": 159,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 159,
+-            "column": 5
+-          }
+-        },
+-        "159": {
+-          "start": {
+-            "line": 160,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 160,
+-            "column": 3
+-          }
+-        },
+-        "160": {
+-          "start": {
+-            "line": 161,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 161,
+-            "column": 16
+-          }
+-        },
+-        "161": {
+-          "start": {
+-            "line": 162,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 162,
+-            "column": 1
+-          }
+-        }
+-      },
+-      "s": {
+-        "0": 1,
+-        "22": 1,
+-        "23": 11,
+-        "24": 11,
+-        "30": 11,
+-        "31": 11,
+-        "32": 11,
+-        "34": 11,
+-        "35": 13,
+-        "36": 13,
+-        "37": 13,
+-        "38": 13,
+-        "39": 13,
+-        "40": 13,
+-        "41": 13,
+-        "46": 45,
+-        "47": 45,
+-        "48": 45,
+-        "49": 19,
+-        "50": 19,
+-        "51": 17,
+-        "52": 17,
+-        "53": 19,
+-        "54": 45,
+-        "56": 45,
+-        "57": 45,
+-        "59": 45,
+-        "60": 49,
+-        "61": 49,
+-        "62": 5,
+-        "63": 5,
+-        "64": 44,
+-        "65": 49,
+-        "67": 45,
+-        "68": 45,
+-        "69": 45,
+-        "70": 45,
+-        "71": 42,
+-        "72": 41,
+-        "73": 41,
+-        "74": 42,
+-        "75": 45,
+-        "76": 3,
+-        "77": 2,
+-        "78": 2,
+-        "79": 3,
+-        "80": 45,
+-        "81": 45,
+-        "82": 45,
+-        "83": 45,
+-        "84": 45,
+-        "85": 45,
+-        "86": 45,
+-        "88": 13,
+-        "89": 19,
+-        "90": 13,
+-        "91": 13,
+-        "92": 13,
+-        "94": 13,
+-        "95": 45,
+-        "96": 45,
+-        "97": 28,
+-        "98": 28,
+-        "99": 45,
+-        "100": 45,
+-        "102": 13,
+-        "103": 49,
+-        "104": 17,
+-        "105": 17,
+-        "106": 32,
+-        "107": 25,
+-        "108": 25,
+-        "109": 25,
+-        "110": 32,
+-        "111": 49,
+-        "112": 13,
+-        "114": 13,
+-        "115": 5,
+-        "116": 4,
+-        "117": 4,
+-        "118": 4,
+-        "119": 5,
+-        "120": 5,
+-        "121": 13,
+-        "122": 5,
+-        "123": 5,
+-        "124": 4,
+-        "125": 4,
+-        "126": 5,
+-        "128": 13,
+-        "129": 1,
+-        "130": 1,
+-        "131": 13,
+-        "132": 11,
+-        "134": 11,
+-        "135": 15,
+-        "136": 15,
+-        "138": 15,
+-        "139": 5,
+-        "140": 5,
+-        "142": 5,
+-        "143": 5,
+-        "144": 5,
+-        "147": 15,
+-        "148": 15,
+-        "149": 40,
+-        "150": 15,
+-        "151": 15,
+-        "152": 10,
+-        "153": 15,
+-        "154": 15,
+-        "155": 5,
+-        "156": 15,
+-        "157": 15,
+-        "158": 15,
+-        "159": 15,
+-        "160": 11,
+-        "161": 11
+-      },
+-      "branchMap": {
+-        "0": {
+-          "type": "branch",
+-          "line": 23,
+-          "loc": {
+-            "start": {
+-              "line": 23,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 162,
+-              "column": 1
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 23,
+-                "column": 7
+-              },
+-              "end": {
+-                "line": 162,
+-                "column": 1
+-              }
+-            }
+-          ]
+-        },
+-        "1": {
+-          "type": "branch",
+-          "line": 32,
+-          "loc": {
+-            "start": {
+-              "line": 32,
+-              "column": 25
+-            },
+-            "end": {
+-              "line": 32,
+-              "column": 37
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 32,
+-                "column": 25
+-              },
+-              "end": {
+-                "line": 32,
+-                "column": 37
+-              }
+-            }
+-          ]
+-        },
+-        "2": {
+-          "type": "branch",
+-          "line": 33,
+-          "loc": {
+-            "start": {
+-              "line": 33,
+-              "column": 16
+-            },
+-            "end": {
+-              "line": 33,
+-              "column": 31
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 33,
+-                "column": 16
+-              },
+-              "end": {
+-                "line": 33,
+-                "column": 31
+-              }
+-            }
+-          ]
+-        },
+-        "3": {
+-          "type": "branch",
+-          "line": 33,
+-          "loc": {
+-            "start": {
+-              "line": 33,
+-              "column": 22
+-            },
+-            "end": {
+-              "line": 33,
+-              "column": 32
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 33,
+-                "column": 22
+-              },
+-              "end": {
+-                "line": 33,
+-                "column": 32
+-              }
+-            }
+-          ]
+-        },
+-        "4": {
+-          "type": "branch",
+-          "line": 35,
+-          "loc": {
+-            "start": {
+-              "line": 35,
+-              "column": 31
+-            },
+-            "end": {
+-              "line": 133,
+-              "column": 3
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 35,
+-                "column": 31
+-              },
+-              "end": {
+-                "line": 133,
+-                "column": 3
+-              }
+-            }
+-          ]
+-        },
+-        "5": {
+-          "type": "branch",
+-          "line": 42,
+-          "loc": {
+-            "start": {
+-              "line": 42,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 87,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 42,
+-                "column": 29
+-              },
+-              "end": {
+-                "line": 87,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "6": {
+-          "type": "branch",
+-          "line": 49,
+-          "loc": {
+-            "start": {
+-              "line": 49,
+-              "column": 19
+-            },
+-            "end": {
+-              "line": 54,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 49,
+-                "column": 19
+-              },
+-              "end": {
+-                "line": 54,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "7": {
+-          "type": "branch",
+-          "line": 51,
+-          "loc": {
+-            "start": {
+-              "line": 51,
+-              "column": 21
+-            },
+-            "end": {
+-              "line": 53,
+-              "column": 9
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 51,
+-                "column": 21
+-              },
+-              "end": {
+-                "line": 53,
+-                "column": 9
+-              }
+-            }
+-          ]
+-        },
+-        "8": {
+-          "type": "branch",
+-          "line": 60,
+-          "loc": {
+-            "start": {
+-              "line": 60,
+-              "column": 6
+-            },
+-            "end": {
+-              "line": 66,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 60,
+-                "column": 6
+-              },
+-              "end": {
+-                "line": 66,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "9": {
+-          "type": "branch",
+-          "line": 62,
+-          "loc": {
+-            "start": {
+-              "line": 62,
+-              "column": 23
+-            },
+-            "end": {
+-              "line": 64,
+-              "column": 9
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 62,
+-                "column": 23
+-              },
+-              "end": {
+-                "line": 64,
+-                "column": 9
+-              }
+-            }
+-          ]
+-        },
+-        "10": {
+-          "type": "branch",
+-          "line": 64,
+-          "loc": {
+-            "start": {
+-              "line": 64,
+-              "column": 8
+-            },
+-            "end": {
+-              "line": 65,
+-              "column": 21
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 64,
+-                "column": 8
+-              },
+-              "end": {
+-                "line": 65,
+-                "column": 21
+-              }
+-            }
+-          ]
+-        },
+-        "11": {
+-          "type": "branch",
+-          "line": 63,
+-          "loc": {
+-            "start": {
+-              "line": 63,
+-              "column": 30
+-            },
+-            "end": {
+-              "line": 63,
+-              "column": 58
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 63,
+-                "column": 30
+-              },
+-              "end": {
+-                "line": 63,
+-                "column": 58
+-              }
+-            }
+-          ]
+-        },
+-        "12": {
+-          "type": "branch",
+-          "line": 71,
+-          "loc": {
+-            "start": {
+-              "line": 71,
+-              "column": 10
+-            },
+-            "end": {
+-              "line": 75,
+-              "column": 12
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 71,
+-                "column": 10
+-              },
+-              "end": {
+-                "line": 75,
+-                "column": 12
+-              }
+-            }
+-          ]
+-        },
+-        "13": {
+-          "type": "branch",
+-          "line": 72,
+-          "loc": {
+-            "start": {
+-              "line": 72,
+-              "column": 37
+-            },
+-            "end": {
+-              "line": 74,
+-              "column": 13
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 72,
+-                "column": 37
+-              },
+-              "end": {
+-                "line": 74,
+-                "column": 13
+-              }
+-            }
+-          ]
+-        },
+-        "14": {
+-          "type": "branch",
+-          "line": 76,
+-          "loc": {
+-            "start": {
+-              "line": 76,
+-              "column": 10
+-            },
+-            "end": {
+-              "line": 80,
+-              "column": 11
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 76,
+-                "column": 10
+-              },
+-              "end": {
+-                "line": 80,
+-                "column": 11
+-              }
+-            }
+-          ]
+-        },
+-        "15": {
+-          "type": "branch",
+-          "line": 77,
+-          "loc": {
+-            "start": {
+-              "line": 77,
+-              "column": 17
+-            },
+-            "end": {
+-              "line": 77,
+-              "column": 48
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 77,
+-                "column": 17
+-              },
+-              "end": {
+-                "line": 77,
+-                "column": 48
+-              }
+-            }
+-          ]
+-        },
+-        "16": {
+-          "type": "branch",
+-          "line": 77,
+-          "loc": {
+-            "start": {
+-              "line": 77,
+-              "column": 48
+-            },
+-            "end": {
+-              "line": 79,
+-              "column": 13
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 77,
+-                "column": 48
+-              },
+-              "end": {
+-                "line": 79,
+-                "column": 13
+-              }
+-            }
+-          ]
+-        },
+-        "17": {
+-          "type": "branch",
+-          "line": 82,
+-          "loc": {
+-            "start": {
+-              "line": 82,
+-              "column": 17
+-            },
+-            "end": {
+-              "line": 85,
+-              "column": 9
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 82,
+-                "column": 17
+-              },
+-              "end": {
+-                "line": 85,
+-                "column": 9
+-              }
+-            }
+-          ]
+-        },
+-        "18": {
+-          "type": "branch",
+-          "line": 89,
+-          "loc": {
+-            "start": {
+-              "line": 89,
+-              "column": 16
+-            },
+-            "end": {
+-              "line": 91,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 89,
+-                "column": 16
+-              },
+-              "end": {
+-                "line": 91,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "19": {
+-          "type": "branch",
+-          "line": 90,
+-          "loc": {
+-            "start": {
+-              "line": 90,
+-              "column": 55
+-            },
+-            "end": {
+-              "line": 90,
+-              "column": 63
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 90,
+-                "column": 55
+-              },
+-              "end": {
+-                "line": 90,
+-                "column": 63
+-              }
+-            }
+-          ]
+-        },
+-        "20": {
+-          "type": "branch",
+-          "line": 95,
+-          "loc": {
+-            "start": {
+-              "line": 95,
+-              "column": 24
+-            },
+-            "end": {
+-              "line": 101,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 95,
+-                "column": 24
+-              },
+-              "end": {
+-                "line": 101,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "21": {
+-          "type": "branch",
+-          "line": 97,
+-          "loc": {
+-            "start": {
+-              "line": 97,
+-              "column": 25
+-            },
+-            "end": {
+-              "line": 99,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 97,
+-                "column": 25
+-              },
+-              "end": {
+-                "line": 99,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "22": {
+-          "type": "branch",
+-          "line": 103,
+-          "loc": {
+-            "start": {
+-              "line": 103,
+-              "column": 17
+-            },
+-            "end": {
+-              "line": 112,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 103,
+-                "column": 17
+-              },
+-              "end": {
+-                "line": 112,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "23": {
+-          "type": "branch",
+-          "line": 104,
+-          "loc": {
+-            "start": {
+-              "line": 104,
+-              "column": 10
+-            },
+-            "end": {
+-              "line": 104,
+-              "column": 50
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 104,
+-                "column": 10
+-              },
+-              "end": {
+-                "line": 104,
+-                "column": 50
+-              }
+-            }
+-          ]
+-        },
+-        "24": {
+-          "type": "branch",
+-          "line": 104,
+-          "loc": {
+-            "start": {
+-              "line": 104,
+-              "column": 50
+-            },
+-            "end": {
+-              "line": 106,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 104,
+-                "column": 50
+-              },
+-              "end": {
+-                "line": 106,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "25": {
+-          "type": "branch",
+-          "line": 106,
+-          "loc": {
+-            "start": {
+-              "line": 106,
+-              "column": 6
+-            },
+-            "end": {
+-              "line": 111,
+-              "column": 22
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 106,
+-                "column": 6
+-              },
+-              "end": {
+-                "line": 111,
+-                "column": 22
+-              }
+-            }
+-          ]
+-        },
+-        "26": {
+-          "type": "branch",
+-          "line": 107,
+-          "loc": {
+-            "start": {
+-              "line": 107,
+-              "column": 33
+-            },
+-            "end": {
+-              "line": 111,
+-              "column": 9
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 107,
+-                "column": 33
+-              },
+-              "end": {
+-                "line": 111,
+-                "column": 9
+-              }
+-            }
+-          ]
+-        },
+-        "27": {
+-          "type": "branch",
+-          "line": 109,
+-          "loc": {
+-            "start": {
+-              "line": 109,
+-              "column": 61
+-            },
+-            "end": {
+-              "line": 109,
+-              "column": 69
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 109,
+-                "column": 61
+-              },
+-              "end": {
+-                "line": 109,
+-                "column": 69
+-              }
+-            }
+-          ]
+-        },
+-        "28": {
+-          "type": "branch",
+-          "line": 115,
+-          "loc": {
+-            "start": {
+-              "line": 115,
+-              "column": 32
+-            },
+-            "end": {
+-              "line": 121,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 115,
+-                "column": 32
+-              },
+-              "end": {
+-                "line": 121,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "29": {
+-          "type": "branch",
+-          "line": 116,
+-          "loc": {
+-            "start": {
+-              "line": 116,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 119,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 116,
+-                "column": 20
+-              },
+-              "end": {
+-                "line": 119,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "30": {
+-          "type": "branch",
+-          "line": 122,
+-          "loc": {
+-            "start": {
+-              "line": 122,
+-              "column": 31
+-            },
+-            "end": {
+-              "line": 127,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 122,
+-                "column": 31
+-              },
+-              "end": {
+-                "line": 127,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "31": {
+-          "type": "branch",
+-          "line": 124,
+-          "loc": {
+-            "start": {
+-              "line": 124,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 126,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 124,
+-                "column": 20
+-              },
+-              "end": {
+-                "line": 126,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "32": {
+-          "type": "branch",
+-          "line": 129,
+-          "loc": {
+-            "start": {
+-              "line": 129,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 131,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 129,
+-                "column": 20
+-              },
+-              "end": {
+-                "line": 131,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "33": {
+-          "type": "branch",
+-          "line": 135,
+-          "loc": {
+-            "start": {
+-              "line": 135,
+-              "column": 18
+-            },
+-            "end": {
+-              "line": 160,
+-              "column": 3
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 135,
+-                "column": 18
+-              },
+-              "end": {
+-                "line": 160,
+-                "column": 3
+-              }
+-            }
+-          ]
+-        },
+-        "34": {
+-          "type": "branch",
+-          "line": 139,
+-          "loc": {
+-            "start": {
+-              "line": 139,
+-              "column": 8
+-            },
+-            "end": {
+-              "line": 139,
+-              "column": 57
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 139,
+-                "column": 8
+-              },
+-              "end": {
+-                "line": 139,
+-                "column": 57
+-              }
+-            }
+-          ]
+-        },
+-        "35": {
+-          "type": "branch",
+-          "line": 139,
+-          "loc": {
+-            "start": {
+-              "line": 139,
+-              "column": 27
+-            },
+-            "end": {
+-              "line": 139,
+-              "column": 46
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 139,
+-                "column": 27
+-              },
+-              "end": {
+-                "line": 139,
+-                "column": 46
+-              }
+-            }
+-          ]
+-        },
+-        "36": {
+-          "type": "branch",
+-          "line": 139,
+-          "loc": {
+-            "start": {
+-              "line": 139,
+-              "column": 57
+-            },
+-            "end": {
+-              "line": 145,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 139,
+-                "column": 57
+-              },
+-              "end": {
+-                "line": 145,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "37": {
+-          "type": "branch",
+-          "line": 141,
+-          "loc": {
+-            "start": {
+-              "line": 141,
+-              "column": 18
+-            },
+-            "end": {
+-              "line": 144,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 141,
+-                "column": 18
+-              },
+-              "end": {
+-                "line": 144,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "38": {
+-          "type": "branch",
+-          "line": 149,
+-          "loc": {
+-            "start": {
+-              "line": 149,
+-              "column": 21
+-            },
+-            "end": {
+-              "line": 151,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 149,
+-                "column": 21
+-              },
+-              "end": {
+-                "line": 151,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "39": {
+-          "type": "branch",
+-          "line": 152,
+-          "loc": {
+-            "start": {
+-              "line": 152,
+-              "column": 26
+-            },
+-            "end": {
+-              "line": 154,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 152,
+-                "column": 26
+-              },
+-              "end": {
+-                "line": 154,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        },
+-        "40": {
+-          "type": "branch",
+-          "line": 155,
+-          "loc": {
+-            "start": {
+-              "line": 155,
+-              "column": 22
+-            },
+-            "end": {
+-              "line": 157,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 155,
+-                "column": 22
+-              },
+-              "end": {
+-                "line": 157,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        }
+-      },
+-      "b": {
+-        "0": [
+-          11
+-        ],
+-        "1": [
+-          7
+-        ],
+-        "2": [
+-          7
+-        ],
+-        "3": [
+-          9
+-        ],
+-        "4": [
+-          13
+-        ],
+-        "5": [
+-          45
+-        ],
+-        "6": [
+-          19
+-        ],
+-        "7": [
+-          17
+-        ],
+-        "8": [
+-          49
+-        ],
+-        "9": [
+-          5
+-        ],
+-        "10": [
+-          44
+-        ],
+-        "11": [
+-          4
+-        ],
+-        "12": [
+-          42
+-        ],
+-        "13": [
+-          41
+-        ],
+-        "14": [
+-          3
+-        ],
+-        "15": [
+-          2
+-        ],
+-        "16": [
+-          2
+-        ],
+-        "17": [
+-          45
+-        ],
+-        "18": [
+-          19
+-        ],
+-        "19": [
+-          2
+-        ],
+-        "20": [
+-          45
+-        ],
+-        "21": [
+-          28
+-        ],
+-        "22": [
+-          49
+-        ],
+-        "23": [
+-          45
+-        ],
+-        "24": [
+-          17
+-        ],
+-        "25": [
+-          32
+-        ],
+-        "26": [
+-          25
+-        ],
+-        "27": [
+-          1
+-        ],
+-        "28": [
+-          5
+-        ],
+-        "29": [
+-          4
+-        ],
+-        "30": [
+-          5
+-        ],
+-        "31": [
+-          4
+-        ],
+-        "32": [
+-          1
+-        ],
+-        "33": [
+-          15
+-        ],
+-        "34": [
+-          13
+-        ],
+-        "35": [
+-          8
+-        ],
+-        "36": [
+-          5
+-        ],
+-        "37": [
+-          5
+-        ],
+-        "38": [
+-          40
+-        ],
+-        "39": [
+-          10
+-        ],
+-        "40": [
+-          5
+-        ]
+-      },
+-      "fnMap": {
+-        "0": {
+-          "name": "defineResource",
+-          "decl": {
+-            "start": {
+-              "line": 23,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 162,
+-              "column": 1
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 23,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 162,
+-              "column": 1
+-            }
+-          },
+-          "line": 23
+-        },
+-        "1": {
+-          "name": "requestAndHandle",
+-          "decl": {
+-            "start": {
+-              "line": 42,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 87,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 42,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 87,
+-              "column": 5
+-            }
+-          },
+-          "line": 42
+-        },
+-        "2": {
+-          "name": "justRequest",
+-          "decl": {
+-            "start": {
+-              "line": 60,
+-              "column": 6
+-            },
+-            "end": {
+-              "line": 66,
+-              "column": 7
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 60,
+-              "column": 6
+-            },
+-            "end": {
+-              "line": 66,
+-              "column": 7
+-            }
+-          },
+-          "line": 60
+-        },
+-        "3": {
+-          "name": "result.then.error.value",
+-          "decl": {
+-            "start": {
+-              "line": 71,
+-              "column": 10
+-            },
+-            "end": {
+-              "line": 75,
+-              "column": 12
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 71,
+-              "column": 10
+-            },
+-            "end": {
+-              "line": 75,
+-              "column": 12
+-            }
+-          },
+-          "line": 71
+-        },
+-        "4": {
+-          "name": "restartLoop",
+-          "decl": {
+-            "start": {
+-              "line": 95,
+-              "column": 24
+-            },
+-            "end": {
+-              "line": 101,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 95,
+-              "column": 24
+-            },
+-            "end": {
+-              "line": 101,
+-              "column": 5
+-            }
+-          },
+-          "line": 95
+-        },
+-        "5": {
+-          "name": "loop",
+-          "decl": {
+-            "start": {
+-              "line": 103,
+-              "column": 17
+-            },
+-            "end": {
+-              "line": 112,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 103,
+-              "column": 17
+-            },
+-            "end": {
+-              "line": 112,
+-              "column": 5
+-            }
+-          },
+-          "line": 103
+-        },
+-        "6": {
+-          "name": "startIntervalIfNeed",
+-          "decl": {
+-            "start": {
+-              "line": 115,
+-              "column": 32
+-            },
+-            "end": {
+-              "line": 121,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 115,
+-              "column": 32
+-            },
+-            "end": {
+-              "line": 121,
+-              "column": 5
+-            }
+-          },
+-          "line": 115
+-        },
+-        "7": {
+-          "name": "stopIntervalIfNeed",
+-          "decl": {
+-            "start": {
+-              "line": 122,
+-              "column": 31
+-            },
+-            "end": {
+-              "line": 127,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 122,
+-              "column": 31
+-            },
+-            "end": {
+-              "line": 127,
+-              "column": 5
+-            }
+-          },
+-          "line": 122
+-        },
+-        "8": {
+-          "name": "refresh",
+-          "decl": {
+-            "start": {
+-              "line": 129,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 131,
+-              "column": 5
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 129,
+-              "column": 20
+-            },
+-            "end": {
+-              "line": 131,
+-              "column": 5
+-            }
+-          },
+-          "line": 129
+-        },
+-        "9": {
+-          "name": "useData",
+-          "decl": {
+-            "start": {
+-              "line": 135,
+-              "column": 18
+-            },
+-            "end": {
+-              "line": 160,
+-              "column": 3
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 135,
+-              "column": 18
+-            },
+-            "end": {
+-              "line": 160,
+-              "column": 3
+-            }
+-          },
+-          "line": 135
+-        }
+-      },
+-      "f": {
+-        "0": 11,
+-        "1": 45,
+-        "2": 49,
+-        "3": 42,
+-        "4": 45,
+-        "5": 49,
+-        "6": 5,
+-        "7": 5,
+-        "8": 1,
+-        "9": 15
+-      }
+-    },
+-    "source": "import { computed, ComputedRef, onUnmounted, shallowRef, watchEffect, getCurrentInstance } from 'vue'\nimport { define } from './define-singleton'\n\ntype Result<T> = Promise<T | undefined> | undefined\ninterface Options {\n  interval?: number\n  /**\n   * @description retain 表示是否保留不一致的数据，如果响应式数据变更，按道理来说已有的数据就不再是对应条件下查询出来的数据了\n   * 应该向使用者返回 isLoading: true，data: undefined, 但为了交互体验更好，使用 retain 可以在这种情况下保留数据\n   */\n  retain?: boolean\n  /**\n   * @description retry 表示重试的次数，这个属性会影响主动请求的行为（不会影响轮询），当主动请求时，失败会立即发起重试，直到重试次数耗尽, 重试期间，isLoading 总是 true\n   */\n  retry?: number\n}\n\n// 错误的原因不一定是 error, 这个要交给业务自己去判断\ntype REASON = unknown\n\n// define 如果只能在 setup 中使用，基于可以把 RC 内置，让定义数据源的人可以直接使用 RC 来决定做某事\n\nexport function defineResource<T>(\n  promiseComputedCreator: () => () => Result<T>,\n  opts?: Options\n): () => {\n  data: ComputedRef<T | undefined>\n  isLoading: ComputedRef<boolean>\n  error: ComputedRef<REASON | undefined>\n  refresh: (silent?: boolean) => Promise<T | undefined> // refresh 可以用于触发一次请求，并且返回这次触发请求响应的结果\n} {\n  const retain = Boolean(opts?.retain)\n  const retry = opts?.retry ?? 0\n  // 绑定到 application\n  const useController = define(() => {\n    let data = shallowRef<T | undefined>(undefined)\n    let isLoading = shallowRef(false)\n    let error = shallowRef<REASON>(undefined)\n    const promiseComputed = promiseComputedCreator()\n    let requestId = 0\n    let stopLoop = false\n    const requestAndHandle = async (opts: {\n      // 静默更新，不是由人或者业务主动触发的更新，而是由 SWR 事件触发的更新为静默更新\n      // 静默更新不会触发 isLoading true，仅会在拉取到新数据后直接替换掉数据\n      silent: boolean\n      retry: number\n    }) => {\n      const silent = opts.silent\n      if (!silent) {\n        isLoading.value = true\n        if (!retain) {\n          data.value = undefined\n        }\n      }\n      stopLoop = true\n\n      requestId += 1\n      let reqId = requestId\n\n      async function justRequest(retry: number): Promise<T | undefined> {\n        const result = Promise.resolve(promiseComputed())\n        if (retry > 0) {\n          return result.catch(() => justRequest(retry - 1))\n        }\n        return result\n      }\n\n      const result = justRequest(opts.retry)\n      result\n        .then(\n          (result) => {\n            if (reqId === requestId) {\n              data.value = result\n            }\n          },\n          (reason: unknown) => {\n            if (!silent && reqId === requestId) {\n              error.value = reason\n            }\n          }\n        )\n        .finally(() => {\n          isLoading.value = false\n          restartLoop()\n        })\n      return result\n    }\n\n    watchEffect(() => {\n      requestAndHandle({ silent: false, retry }).catch(() => {})\n    })\n    let timeoutHandle: ReturnType<typeof setTimeout> | undefined\n    let loopInterval: number | undefined\n\n    const restartLoop = () => {\n      stopLoop = false\n      if (timeoutHandle) {\n        clearTimeout(timeoutHandle)\n      }\n      loop()\n    }\n\n    const loop = () => {\n      if (stopLoop || loopInterval === undefined) {\n        return\n      }\n      timeoutHandle = setTimeout(() => {\n        if (!stopLoop) {\n          requestAndHandle({ silent: true, retry: 0 }).catch(() => {})\n        }\n      }, loopInterval)\n    }\n    let rc = 0\n\n    const startIntervalIfNeed = (interval: number | undefined) => {\n      if (rc === 0) {\n        loopInterval = interval\n        loop()\n      }\n      rc += 1\n    }\n    const stopIntervalIfNeed = () => {\n      rc -= 1\n      if (rc === 0) {\n        clearTimeout(timeoutHandle)\n      }\n    }\n\n    const refresh = async (silent = true) => {\n      return requestAndHandle({ silent, retry: 0 })\n    }\n    return { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed, refresh }\n  })\n\n  const useData = () => {\n    const currentInstance = getCurrentInstance()\n    const { data, isLoading, error, startIntervalIfNeed, stopIntervalIfNeed, refresh } = useController()\n    // 当组件产生依赖时， RC 加1\n    if (currentInstance && opts?.interval !== undefined) {\n      startIntervalIfNeed(opts.interval)\n      onUnmounted(() => {\n        // 当组件卸载时， RC 减1\n        stopIntervalIfNeed()\n      })\n    }\n\n    // 这个必须在 setup 中使用\n    return {\n      data: computed(() => {\n        return data.value\n      }),\n      isLoading: computed(() => {\n        return isLoading.value\n      }),\n      error: computed(() => {\n        return error.value\n      }),\n      refresh,\n    }\n  }\n  return useData\n}\n"
+-  },
+-  "define-singleton.ts": {
+-    "coverage": {
+-      "path": "/Users/xiongjie/github/vue-project/packages/singleton/src/define-singleton.ts",
+-      "all": false,
+-      "statementMap": {
+-        "0": {
+-          "start": {
+-            "line": 1,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 1,
+-            "column": 38
+-          }
+-        },
+-        "6": {
+-          "start": {
+-            "line": 7,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 7,
+-            "column": 45
+-          }
+-        },
+-        "7": {
+-          "start": {
+-            "line": 8,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 8,
+-            "column": 26
+-          }
+-        },
+-        "8": {
+-          "start": {
+-            "line": 9,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 9,
+-            "column": 34
+-          }
+-        },
+-        "9": {
+-          "start": {
+-            "line": 10,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 10,
+-            "column": 34
+-          }
+-        },
+-        "10": {
+-          "start": {
+-            "line": 11,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 11,
+-            "column": 29
+-          }
+-        },
+-        "11": {
+-          "start": {
+-            "line": 12,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 12,
+-            "column": 37
+-          }
+-        },
+-        "12": {
+-          "start": {
+-            "line": 13,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 13,
+-            "column": 23
+-          }
+-        },
+-        "13": {
+-          "start": {
+-            "line": 14,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 14,
+-            "column": 47
+-          }
+-        },
+-        "14": {
+-          "start": {
+-            "line": 15,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 15,
+-            "column": 33
+-          }
+-        },
+-        "15": {
+-          "start": {
+-            "line": 16,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 16,
+-            "column": 8
+-          }
+-        },
+-        "16": {
+-          "start": {
+-            "line": 17,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 17,
+-            "column": 5
+-          }
+-        },
+-        "17": {
+-          "start": {
+-            "line": 18,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 18,
+-            "column": 32
+-          }
+-        },
+-        "18": {
+-          "start": {
+-            "line": 19,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 19,
+-            "column": 3
+-          }
+-        },
+-        "19": {
+-          "start": {
+-            "line": 20,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 20,
+-            "column": 17
+-          }
+-        },
+-        "20": {
+-          "start": {
+-            "line": 21,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 21,
+-            "column": 1
+-          }
+-        }
+-      },
+-      "s": {
+-        "0": 1,
+-        "6": 1,
+-        "7": 20,
+-        "8": 40,
+-        "9": 40,
+-        "10": 40,
+-        "11": 26,
+-        "12": 26,
+-        "13": 26,
+-        "14": 26,
+-        "15": 26,
+-        "16": 26,
+-        "17": 40,
+-        "18": 40,
+-        "19": 20,
+-        "20": 20
+-      },
+-      "branchMap": {
+-        "0": {
+-          "type": "branch",
+-          "line": 7,
+-          "loc": {
+-            "start": {
+-              "line": 7,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 21,
+-              "column": 1
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 7,
+-                "column": 7
+-              },
+-              "end": {
+-                "line": 21,
+-                "column": 1
+-              }
+-            }
+-          ]
+-        },
+-        "1": {
+-          "type": "branch",
+-          "line": 8,
+-          "loc": {
+-            "start": {
+-              "line": 8,
+-              "column": 19
+-            },
+-            "end": {
+-              "line": 19,
+-              "column": 3
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 8,
+-                "column": 19
+-              },
+-              "end": {
+-                "line": 19,
+-                "column": 3
+-              }
+-            }
+-          ]
+-        },
+-        "2": {
+-          "type": "branch",
+-          "line": 11,
+-          "loc": {
+-            "start": {
+-              "line": 11,
+-              "column": 28
+-            },
+-            "end": {
+-              "line": 17,
+-              "column": 5
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 11,
+-                "column": 28
+-              },
+-              "end": {
+-                "line": 17,
+-                "column": 5
+-              }
+-            }
+-          ]
+-        },
+-        "3": {
+-          "type": "branch",
+-          "line": 13,
+-          "loc": {
+-            "start": {
+-              "line": 13,
+-              "column": 16
+-            },
+-            "end": {
+-              "line": 16,
+-              "column": 7
+-            }
+-          },
+-          "locations": [
+-            {
+-              "start": {
+-                "line": 13,
+-                "column": 16
+-              },
+-              "end": {
+-                "line": 16,
+-                "column": 7
+-              }
+-            }
+-          ]
+-        }
+-      },
+-      "b": {
+-        "0": [
+-          20
+-        ],
+-        "1": [
+-          40
+-        ],
+-        "2": [
+-          26
+-        ],
+-        "3": [
+-          26
+-        ]
+-      },
+-      "fnMap": {
+-        "0": {
+-          "name": "define",
+-          "decl": {
+-            "start": {
+-              "line": 7,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 21,
+-              "column": 1
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 7,
+-              "column": 7
+-            },
+-            "end": {
+-              "line": 21,
+-              "column": 1
+-            }
+-          },
+-          "line": 7
+-        },
+-        "1": {
+-          "name": "useHooks",
+-          "decl": {
+-            "start": {
+-              "line": 8,
+-              "column": 19
+-            },
+-            "end": {
+-              "line": 19,
+-              "column": 3
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 8,
+-              "column": 19
+-            },
+-            "end": {
+-              "line": 19,
+-              "column": 3
+-            }
+-          },
+-          "line": 8
+-        }
+-      },
+-      "f": {
+-        "0": 20,
+-        "1": 40
+-      }
+-    },
+-    "source": "import { useContext } from './context'\nimport { effectScope } from 'vue'\n\n/**\n * @description 可以用于定义应用级单例\n */\nexport function define<T>(factory: () => T) {\n  const useHooks = () => {\n    const { store } = useContext()\n    let item = store.get(useHooks)\n    if (item === undefined) {\n      const scope = effectScope(true)\n      scope.run(() => {\n        item = { cacheValue: factory(), scope }\n        store.set(useHooks, item)\n      })\n    }\n    return item!.cacheValue as T\n  }\n  return useHooks\n}\n"
+-  },
+-  "index.ts": {
+-    "coverage": {
+-      "path": "/Users/xiongjie/github/vue-project/packages/singleton/src/index.ts",
+-      "all": false,
+-      "statementMap": {
+-        "0": {
+-          "start": {
+-            "line": 1,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 1,
+-            "column": 43
+-          }
+-        }
+-      },
+-      "s": {
+-        "0": 1
+-      },
+-      "branchMap": {},
+-      "b": {},
+-      "fnMap": {},
+-      "f": {}
+-    },
+-    "source": "export { define } from './define-singleton'\nexport { createContext, ContextKey } from './context'\nexport { withResolvers } from './with-resolves'\n\nexport { defineResource } from './define-resource'\n"
+-  },
+-  "with-resolves.ts": {
+-    "coverage": {
+-      "path": "/Users/xiongjie/github/vue-project/packages/singleton/src/with-resolves.ts",
+-      "all": false,
+-      "statementMap": {
+-        "0": {
+-          "start": {
+-            "line": 1,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 1,
+-            "column": 39
+-          }
+-        },
+-        "1": {
+-          "start": {
+-            "line": 2,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 2,
+-            "column": 52
+-          }
+-        },
+-        "2": {
+-          "start": {
+-            "line": 3,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 3,
+-            "column": 34
+-          }
+-        },
+-        "3": {
+-          "start": {
+-            "line": 4,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 4,
+-            "column": 3
+-          }
+-        },
+-        "4": {
+-          "start": {
+-            "line": 5,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 5,
+-            "column": 50
+-          }
+-        },
+-        "5": {
+-          "start": {
+-            "line": 6,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 6,
+-            "column": 35
+-          }
+-        },
+-        "6": {
+-          "start": {
+-            "line": 7,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 7,
+-            "column": 57
+-          }
+-        },
+-        "7": {
+-          "start": {
+-            "line": 8,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 8,
+-            "column": 22
+-          }
+-        },
+-        "8": {
+-          "start": {
+-            "line": 9,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 9,
+-            "column": 20
+-          }
+-        },
+-        "9": {
+-          "start": {
+-            "line": 10,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 10,
+-            "column": 4
+-          }
+-        },
+-        "10": {
+-          "start": {
+-            "line": 11,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 11,
+-            "column": 10
+-          }
+-        },
+-        "11": {
+-          "start": {
+-            "line": 12,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 12,
+-            "column": 12
+-          }
+-        },
+-        "13": {
+-          "start": {
+-            "line": 14,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 14,
+-            "column": 12
+-          }
+-        },
+-        "15": {
+-          "start": {
+-            "line": 16,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 16,
+-            "column": 11
+-          }
+-        },
+-        "16": {
+-          "start": {
+-            "line": 17,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 17,
+-            "column": 3
+-          }
+-        },
+-        "17": {
+-          "start": {
+-            "line": 18,
+-            "column": 0
+-          },
+-          "end": {
+-            "line": 18,
+-            "column": 1
+-          }
+-        }
+-      },
+-      "s": {
+-        "0": 1,
+-        "1": 0,
+-        "2": 0,
+-        "3": 0,
+-        "4": 0,
+-        "5": 0,
+-        "6": 0,
+-        "7": 0,
+-        "8": 0,
+-        "9": 0,
+-        "10": 0,
+-        "11": 0,
+-        "13": 0,
+-        "15": 0,
+-        "16": 0,
+-        "17": 0
+-      },
+-      "branchMap": {},
+-      "b": {},
+-      "fnMap": {
+-        "0": {
+-          "name": "withResolvers",
+-          "decl": {
+-            "start": {
+-              "line": 1,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 18,
+-              "column": 1
+-            }
+-          },
+-          "loc": {
+-            "start": {
+-              "line": 1,
+-              "column": 29
+-            },
+-            "end": {
+-              "line": 18,
+-              "column": 1
+-            }
+-          },
+-          "line": 1
+-        }
+-      },
+-      "f": {
+-        "0": 0
+-      }
+-    },
+-    "source": "export const withResolvers = <T>() => {\n  if (typeof Promise.withResolvers === 'function') {\n    return Promise.withResolvers()\n  }\n  let resolve: (value: T | PromiseLike<T>) => void\n  let reject: (reason: any) => void\n  const promise = new Promise<T>((_resolve, _reject) => {\n    resolve = _resolve\n    reject = _reject\n  })\n  return {\n    promise,\n    // @ts-ignore\n    resolve,\n    // @ts-ignore\n    reject,\n  }\n}\n"
+-  }
+-}
+\ No newline at end of file
+diff --git a/packages/singleton/src/context.ts b/packages/singleton/src/context.ts
+index 60dab39..64f47bc 100644
+--- a/packages/singleton/src/context.ts
++++ b/packages/singleton/src/context.ts
+@@ -18,11 +18,11 @@ export interface Context {
+ export const useContext = () => {
+   const context = inject<Context>(ContextKey)
+   if (context === undefined) {
+-    const message =
++    throw new Error(
+       'The possible reasons for the current error are: \n' +
+-      '1) You need to use use(createContext()) to create a context when creating the app\n' +
+-      '2) Hooks functions can only be called within the setup function.'
+-    throw new Error(message)
++        '1) You need to use use(createContext()) to create a context when creating the app\n' +
++        '2) Hooks functions can only be called within the setup function.'
++    )
+   }
+   return context
+ }
+diff --git a/packages/singleton/src/define-resource.spec.tsx b/packages/singleton/src/define-resource.spec.tsx
+index 87c1f9f..d2e44f6 100644
+--- a/packages/singleton/src/define-resource.spec.tsx
++++ b/packages/singleton/src/define-resource.spec.tsx
+@@ -1,8 +1,7 @@
+ import { afterEach, describe, expect, it } from 'vitest'
+-import { defineResource } from './define-resource'
++import { defineResource, define } from './index'
+ import { defineComponent, nextTick, reactive, shallowRef, watchEffect } from 'vue'
+ import { renderComponent } from '../test/render'
+-import { define } from './define-singleton'
+ import { delay, getOrCreateStub } from '@cexoso/test-utils'
+ import { waitFor } from '@testing-library/dom'
+ 
+diff --git a/packages/singleton/src/define-singleton.spec.tsx b/packages/singleton/src/define-singleton.spec.tsx
+index 2c0f0cb..7faabc9 100644
+--- a/packages/singleton/src/define-singleton.spec.tsx
++++ b/packages/singleton/src/define-singleton.spec.tsx
+@@ -1,7 +1,7 @@
+ import { describe, it } from 'vitest'
+ import { defineComponent, ref } from 'vue'
+ import { renderComponent } from '../test/render'
+-import { define } from './define-singleton'
++import { define } from './index'
+ import { fireEvent } from '@testing-library/dom'
+ 
+ const useCount = define(() => ref(0))
