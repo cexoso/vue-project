@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.13
+
+### Patch Changes
+
+- 7a97380: 添加增量覆盖率工具
+
 ## 0.0.12
 
 ### Patch Changes
