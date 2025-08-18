@@ -32,6 +32,13 @@ export const initAllCoverageData = (): AllCoverageDataDeatil => {
   }
 }
 
+export const useProjectInfo = () => {
+  const { data } = useMetaInfo()
+  return computed(() => {
+    return data.value?.projectInfo ?? ''
+  })
+}
+
 export const useIsCodeRangerHasChange = () => {
   const gitDiffData = useGitChangeLineSet()
   const { data } = useMetaInfo()
