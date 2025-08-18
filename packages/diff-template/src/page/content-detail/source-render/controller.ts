@@ -208,8 +208,6 @@ export const useSourceToken = () => {
 
     for (let i = 0; i < block.length; i++) {
       let current = block[i]
-      console.log(current.block)
-
       if (current.type === 'ranger') {
         current = horizontalMove(current)
         renderIncludeTo(offsetColumn(current.block.start, -1))

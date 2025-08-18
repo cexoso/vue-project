@@ -45,11 +45,7 @@ export const useIsCodeRangerHasChange = () => {
       // undefined 表示没有拉取 git diff 的情况，这种情况需要全量统计
       return true
     }
-    console.log('debugger 🐛 jkop', diffData)
-    console.log('debugger 🐛 ', join(projectInfo, filePath))
-console.log(
-	'debugger 🐛 filePath',
-);
+
     const changeLines = diffData[join(projectInfo, filePath)]
     if (changeLines === undefined) {
       // 没有 changeLiens 就直接不纳入统计
