@@ -100,7 +100,8 @@ describe('源码页', () => {
         },
       })
       const dom = await screen.findByRole('source-display')
-      expect(dom.textContent).eq(dedent`
+      const code = dom.querySelector('code')!
+      expect(code.textContent).eq(dedent`
         export const withResolvers = <T>() => {
           if (typeof Promise.withResolvers === 'function') {
             return Promise.withResolvers()
