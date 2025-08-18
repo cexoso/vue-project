@@ -3,7 +3,7 @@ type AbsolutePath = string
 
 export interface Position {
   line: number
-  column: number
+  column: number | null // 在实际的落地中发现 column 还有可能为 null
 }
 
 export interface CodeRanger {

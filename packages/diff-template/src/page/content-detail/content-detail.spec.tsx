@@ -70,8 +70,8 @@ describe('源码页', () => {
     it('分支覆盖率', async () => {
       const screen = await render()
       const x = await screen.findByRole('panel', { name: 'Branches' })
-      await findByText(x, '0%')
-      await findByText(x, 'A/N')
+      await findByText(x, '50%')
+      await findByText(x, '1/2')
     })
     it('函数覆盖率', async () => {
       const screen = await render()

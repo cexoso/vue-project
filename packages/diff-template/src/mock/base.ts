@@ -6,6 +6,18 @@ import dirModeGitLog from './dir-mode-diff.log?raw'
 import metaInfo from './meta-info.json'
 import type { CoverageData } from '../type'
 import { useRouter } from 'vue-router'
+import { GCMMock } from './gcm-mock-data'
+
+export const mockGCMExample = () => {
+  const http = useDatas()
+  const mock = GCMMock()
+  const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
+  getCoverageDataStub.resolves(mock.coverageData)
+  const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
+  getGitDiffLogStub.resolves(mock.diff)
+  const getMetaInfoStub = getOrCreateStub(http, 'getMetaInfo')
+  getMetaInfoStub.resolves(mock.metaInfo)
+}
 
 export const mockBase = () => {
   const http = useDatas()

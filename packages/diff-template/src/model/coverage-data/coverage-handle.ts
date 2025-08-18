@@ -53,7 +53,7 @@ export const useIsCodeRangerHasChange = () => {
       return true
     }
 
-    const changeLines = diffData[join(projectInfo, filePath)]
+    const changeLines = diffData[filePath]
     if (changeLines === undefined) {
       // 没有 changeLiens 就直接不纳入统计
       return false

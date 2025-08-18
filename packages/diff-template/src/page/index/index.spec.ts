@@ -18,8 +18,8 @@ describe('覆盖率', () => {
       await findByText(statements, '1/3')
 
       const branches = await screen.findByRole('panel', { name: 'Branches' })
-      await findByText(branches, '0%')
-      await findByText(branches, 'A/N')
+      await findByText(branches, '50%')
+      await findByText(branches, '1/2')
 
       const functions = await screen.findByRole('panel', { name: 'Functions' })
       await findByText(functions, '100%')
@@ -36,8 +36,8 @@ describe('覆盖率', () => {
       expect(getByRole(server, 'statements-percent').innerText).eq('0%')
       expect(getByRole(server, 'statements-fraction').innerText).eq('0/2')
 
-      expect(getByRole(server, 'branchs-percent').innerText).eq('0%')
-      expect(getByRole(server, 'branchs-fraction').innerText).eq('A/N')
+      expect(getByRole(server, 'branchs-percent').innerText).eq('50%')
+      expect(getByRole(server, 'branchs-fraction').innerText).eq('1/2')
 
       expect(getByRole(server, 'functions-percent').innerText).eq('100%')
       expect(getByRole(server, 'functions-fraction').innerText).eq('1/1')
@@ -65,8 +65,8 @@ describe('覆盖率', () => {
       await findByText(statements, '0/2')
 
       const branches = await screen.findByRole('panel', { name: 'Branches' })
-      await findByText(branches, '0%')
-      await findByText(branches, 'A/N')
+      await findByText(branches, '50%')
+      await findByText(branches, '1/2')
 
       const functions = await screen.findByRole('panel', { name: 'Functions' })
       await findByText(functions, '100%')
@@ -83,8 +83,8 @@ describe('覆盖率', () => {
       expect(getByRole(context, 'statements-percent').innerText).eq('0%')
       expect(getByRole(context, 'statements-fraction').innerText).eq('0/2')
 
-      expect(getByRole(context, 'branchs-percent').innerText).eq('0%')
-      expect(getByRole(context, 'branchs-fraction').innerText).eq('A/N')
+      expect(getByRole(context, 'branchs-percent').innerText).eq('50%')
+      expect(getByRole(context, 'branchs-fraction').innerText).eq('1/2')
 
       expect(getByRole(context, 'functions-percent').innerText).eq('100%')
       expect(getByRole(context, 'functions-fraction').innerText).eq('1/1')

@@ -1,14 +1,26 @@
 import { computed } from 'vue'
 import { useGitDiffData } from './data'
-import { handleDiff } from './git-diff-parse'
+import { handleDiff, type ChangeLines } from './git-diff-parse'
+import { useProjectInfo } from '../coverage-data/coverage-handle'
+import { relative } from '../../utils/path-relative'
 
 export const useGitChangeset = () => {
   const gitChangeset = useGitDiffData()
+  const projectInfoRef = useProjectInfo()
   return computed(() => {
-    if (!gitChangeset.value) {
+    const projectInfo = projectInfoRef.value
+    if (!gitChangeset.value || projectInfo === undefined) {
       return undefined
     }
-    return handleDiff(gitChangeset.value)
+    const originMap = handleDiff(gitChangeset.value)
+    let diffMap: Record<string, ChangeLines> = {}
+
+    const keys = Object.keys(originMap)
+    for (let key of keys) {
+      const value = originMap[key]
+      diffMap[relative(projectInfo, key)] = value
+    }
+    return diffMap
   })
 }
 
