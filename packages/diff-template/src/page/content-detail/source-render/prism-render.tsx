@@ -1,4 +1,4 @@
-import { defineComponent, onUpdated } from 'vue'
+import { defineComponent, onMounted, onUpdated } from 'vue'
 import { ref } from 'vue'
 import Prism from 'prismjs'
 import { useSourceToken } from './controller'
@@ -11,12 +11,15 @@ export const PrismRender = defineComponent({
   setup() {
     const sourceRef = useSourceToken()
     const codeRef = ref<HTMLElement>()
-    onUpdated(() => {
+
+    const update = () => {
       const code = codeRef.value
       if (code) {
         Prism.highlightElement(code)
       }
-    })
+    }
+    onMounted(() => update())
+    onUpdated(() => update())
 
     return () => {
       const source = sourceRef.value
