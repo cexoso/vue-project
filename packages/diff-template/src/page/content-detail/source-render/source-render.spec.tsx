@@ -5,7 +5,6 @@ import { useRouter } from 'vue-router'
 import { PrismRender } from './prism-render'
 import { useSourceHelper } from './controller'
 import { fireEvent, waitFor } from '@testing-library/dom'
-import dedent from 'ts-dedent'
 
 describe('usePrismTokens 集成', () => {
   it('usePrismTokens 无 git diff', async () => {
