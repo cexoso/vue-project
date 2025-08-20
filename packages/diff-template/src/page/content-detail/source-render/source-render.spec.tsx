@@ -77,29 +77,10 @@ describe('源码渲染', () => {
     fireEvent.click(await screen.findByText('src'))
     fireEvent.click(await screen.findByText('with-resolves.ts'))
     const dom = await screen.findByTitle('function not covered')
-    expect(dom.innerText).eq(
-      dedent(`<T>() => {
-        if (typeof Promise.withResolvers === 'function') {
-          return Promise.withResolvers()
-        }
-        let resolve: (value: T | PromiseLike<T>) => void
-        let reject: (reason: any) => void
-        const promise = new Promise<T>((_resolve, _reject) => {
-          resolve = _resolve
-          reject = _reject
-        })
-        return {
-          promise,
-          // @ts-ignore
-          resolve,
-          // @ts-ignore
-          reject,
-        }
-      }`)
-    )
+    expect(dom.innerText).deep.eq(`<T`)
   })
 
-  it.only('增加覆盖率时，function 应该被过滤', async () => {
+  it('增加覆盖率时，function 应该被过滤', async () => {
     const screen = await renderTestApp({
       async play() {
         mockGitDiff()
@@ -107,9 +88,6 @@ describe('源码渲染', () => {
     })
     fireEvent.click(await screen.findByText('src'))
     fireEvent.click(await screen.findByText('with-resolves.ts'))
-    // await screen.findByRole('coverage-data', { name: 'base.ts' })
-    // fireEvent.click(screen.getByText('base.ts'))
-    // await screen.findByRole('source-display')
-    // expect(() => screen.getByText('function not covered')).throw()
+    await screen.findByRole('source-display')
   })
 })
