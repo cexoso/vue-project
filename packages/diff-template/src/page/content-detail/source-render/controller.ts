@@ -1,5 +1,5 @@
 import { computed } from 'vue'
-import type { BranchType, CodeRanger, Position } from '../../../type'
+import type { BranchType, CodeRanger, RequiredColumnPosition } from '../../../type'
 import { useCoverageData } from '../../../model/coverage-data'
 import { useFilePath, useHasChange } from '../controller'
 import {
@@ -171,7 +171,7 @@ export const useSourceToken = () => {
 
     let currentIndex = { line: 0, column: 0 }
 
-    const renderIncludeTo = (nextposition: Position) => {
+    const renderIncludeTo = (nextposition: RequiredColumnPosition) => {
       if (!isPositionEqual(currentIndex, nextposition)) {
         result.push({
           type: 'string',
@@ -186,11 +186,11 @@ export const useSourceToken = () => {
 
     const result: Array<StringBlock | SpanBlock> = []
 
-    const setCurrentIndex = (basePosition: Position, columnOffset: number = 0) => {
+    const setCurrentIndex = (basePosition: RequiredColumnPosition, columnOffset: number = 0) => {
       currentIndex = offsetColumn(basePosition, columnOffset)
     }
 
-    const offsetColumn = (basePosition: Position, columnOffset: number = 0) => ({
+    const offsetColumn = (basePosition: RequiredColumnPosition, columnOffset: number = 0) => ({
       ...basePosition,
       column: basePosition.column + columnOffset,
     })
@@ -219,7 +219,7 @@ export const useSourceToken = () => {
             content: source.getSnippet(current.block),
           },
         })
-        setCurrentIndex(current.block.end, 1)
+        setCurrentIndex(source.fillPosition(current.block.end), 1)
       } else if (current.type === 'branch') {
         renderIncludeTo(offsetColumn(current.block.start))
         result.push({
@@ -242,7 +242,7 @@ export const useSourceToken = () => {
             class: 'function-tag',
           },
         })
-        setCurrentIndex(current.block.end, 1)
+        setCurrentIndex(source.fillPosition(current.block.end), 1)
       }
     }
     renderIncludeTo(source.getEndPosition())

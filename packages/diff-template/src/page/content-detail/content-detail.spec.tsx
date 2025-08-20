@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { renderTestApp } from '../../render-app/render-test'
-import { mockBase, mockGitDiff, mockSingleDirMode } from '../../mock/base'
+import { mockBase, mockGCMExample, mockGitDiff, mockSingleDirMode } from '../../mock/base'
 import { useRouter } from 'vue-router'
 import Panel from './panel.vue'
 import { findByText } from '@testing-library/dom'
@@ -121,6 +121,18 @@ describe('源码页', () => {
           }
         }
       `)
+    })
+  })
+
+  it('gcm example', async () => {
+    const screen = await renderTestApp({
+      async play() {
+        mockGCMExample()
+        useRouter().replace({
+          name: 'content-detail',
+          query: { file: './a.ts' },
+        })
+      },
     })
   })
 })

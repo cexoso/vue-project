@@ -1,4 +1,4 @@
-import type { CodeRanger } from '../../../type'
+import type { CodeRanger, OptionalColumnPosition } from '../../../type'
 
 type IndexOf = number
 
@@ -18,11 +18,22 @@ export class SourceHelper {
     }
   }
 
+  endColumnOfLine(line: number) {
+    return this.lineStarts[line] - this.lineStarts[line - 1]
+  }
+  fillPosition(position: OptionalColumnPosition) {
+    return {
+      line: position.line,
+      column: position.column ?? this.endColumnOfLine(position.line),
+    }
+  }
+
   getSnippet(block: CodeRanger): string {
     const start = this.getIndexOf(block.start.line, block.start.column)
-    const end = this.getIndexOf(block.end.line, block.end.column)
+    const end = this.getIndexOf(block.end.line, block.end.column ?? this.endColumnOfLine(block.end.line))
     return this.getSnippetByIndex(start, end + 1)
   }
+
   private getSnippetByIndex(startIndex: number, endIndex: number) {
     return this.source.slice(startIndex, endIndex)
   }

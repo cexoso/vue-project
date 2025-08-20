@@ -1,19 +1,26 @@
 type RelativePath = string
 type AbsolutePath = string
 
-export interface Position {
+// 在实际的落地中发现 column 还有可能为 null
+export interface OptionalColumnPosition {
   line: number
-  column: number | null // 在实际的落地中发现 column 还有可能为 null
+  column: number | null
+}
+
+// column 必须为数字的位置接口
+export interface RequiredColumnPosition {
+  line: number
+  column: number
 }
 
 export interface CodeRanger {
-  start: Position
-  end: Position
+  start: RequiredColumnPosition
+  end: OptionalColumnPosition
 }
 
 interface BranchLocation {
-  start: Partial<Position>
-  end: Partial<Position>
+  start: Partial<OptionalColumnPosition>
+  end: Partial<OptionalColumnPosition>
 }
 
 export type MaybeCodeRanger = BranchLocation | CodeRanger

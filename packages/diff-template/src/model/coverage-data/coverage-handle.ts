@@ -1,10 +1,9 @@
 import { computed } from 'vue'
 import { useCoverageData } from './data'
 import { useGitChangeLineSet } from '../git-diff/git-changeset'
-import type { BranchBlock, CodeRanger, MaybeCodeRanger, Position } from '../../type'
+import type { BranchBlock, CodeRanger, MaybeCodeRanger, OptionalColumnPosition } from '../../type'
 import { useDatas } from '../../service/http-service'
 import { defineResource } from '@cexoso/vue-singleton'
-import { join } from '../../utils/path-join'
 
 const useMetaInfo = defineResource(() => {
   const http = useDatas()
@@ -75,7 +74,7 @@ export const useIsCodeRangerHasChange = () => {
 export function isCodeRanger(codeRanger: MaybeCodeRanger): codeRanger is CodeRanger {
   return codeRanger.end.line !== undefined
 }
-export function isPositionEqual(a: Position, b: Position) {
+export function isPositionEqual(a: OptionalColumnPosition, b: OptionalColumnPosition) {
   return a.line === b.line && a.column === b.column
 }
 
