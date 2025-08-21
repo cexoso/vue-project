@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.3
+
+### Patch Changes
+
+- 03cb36b: 修复一些 bug
+
 ## 0.0.2
 
 ### Patch Changes
