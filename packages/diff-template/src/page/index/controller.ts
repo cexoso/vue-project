@@ -16,7 +16,7 @@ const useIsAllFileInOneDir = () => {
   return computed(() => {
     const coverageData = coverageDataRef.value
     if (coverageData === undefined) {
-      return []
+      return false
     }
     const filepaths = Object.keys(coverageData)
     let dir = null
