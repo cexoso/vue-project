@@ -1,5 +1,11 @@
 # @cexoso/git-diff-report
 
+## 0.0.4
+
+### Patch Changes
+
+- 5c0f4df: 对 diff template 的依赖应该是 patch 版本的
+
 ## 0.0.3
 
 ### Patch Changes
