@@ -5,6 +5,7 @@
       <span class="ml-4" v-if="isDirMode"> {{ dir }} </span>
     </h1>
   </div>
+  <div class="text-gray-500 mb-2">你可以使用 m 键来切换全量/增量覆盖率</div>
   <CoveragePanel :coverage-data="coverageData" />
 </template>
 

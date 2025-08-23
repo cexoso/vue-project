@@ -3,6 +3,7 @@ import { renderTestApp } from '../../render-app/render-test'
 import { mockBase, mockGitDiff, mockSingleDirMode } from '../../mock/base'
 import { getByRole, fireEvent, waitFor, findByText } from '@testing-library/dom'
 import { useRoute } from 'vue-router'
+import { userEvent } from '@testing-library/user-event'
 
 describe('覆盖率', () => {
   describe('增量覆盖率', () => {
@@ -255,5 +256,19 @@ describe('交互相关', () => {
     const dirname = screen.getByText('All files')
     fireEvent.click(dirname)
     await screen.findByRole('coverage-data', { name: 'src' })
+  })
+  it('支持 M 键切换全量/增量覆盖率', async () => {
+    const screen = await renderTestApp({
+      async play() {
+        mockGitDiff()
+      },
+    })
+
+    const statements = await screen.findByRole('panel', { name: 'Statements' })
+    await findByText(statements, '33.33%')
+    userEvent.keyboard('m')
+    await findByText(statements, '89.44%') // 按下空格，会切换成全量模式查看数据
+    userEvent.keyboard('M')
+    await findByText(statements, '33.33%') // 在松手后，会再次切换成增量模式
   })
 })
