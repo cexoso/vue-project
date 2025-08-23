@@ -447,8 +447,8 @@ packages:
     resolution: {integrity: sha512-E5chM8eWjTp/aNoVpcbfM7mLxu9XGLWYise2eBKGQomAk/Mb4XoxyqXTZbuTohbsl8EKqdlMhnDI2CCLfcs9wA==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/traverse': 7.28.0
-      '@babel/types': 7.28.1
+      '@babel/traverse': 7.28.3
+      '@babel/types': 7.28.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -481,7 +481,7 @@ packages:
     resolution: {integrity: sha512-URMGH08NzYFhubNSGJrpUEphGKQwMQYBySzat5cAByY1/YgIRkULnIy3tAMeszlL/so2HbeilYloUmSpd7GdVw==}
     engines: {node: '>=6.9.0'}
     dependencies:
-      '@babel/types': 7.28.1
+      '@babel/types': 7.28.2
     dev: true
 
   /@babel/helper-plugin-utils@7.27.1:
@@ -512,7 +512,7 @@ packages:
       '@babel/core': 7.28.0
       '@babel/helper-member-expression-to-functions': 7.27.1
       '@babel/helper-optimise-call-expression': 7.27.1
-      '@babel/traverse': 7.28.0
+      '@babel/traverse': 7.28.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -5118,7 +5118,7 @@ packages:
     dependencies:
       magic-string: 0.30.17
       mlly: 1.7.4
-      rollup: 4.45.1
+      rollup: 4.46.2
     dev: true
 
   /flagged-respawn@2.0.0:
@@ -7718,7 +7718,7 @@ packages:
       picocolors: 1.1.1
       postcss-load-config: 6.0.1(tsx@4.20.4)
       resolve-from: 5.0.0
-      rollup: 4.45.1
+      rollup: 4.46.2
       source-map: 0.8.0-beta.0
       sucrase: 3.35.0
       tinyexec: 0.3.2

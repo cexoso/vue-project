@@ -4,7 +4,7 @@ import { handleDiff, type ChangeLines } from './git-diff-parse'
 import { useProjectInfo } from '../coverage-data/coverage-handle'
 import { relative } from '../../utils/path-relative'
 
-export const useGitChangeset = () => {
+const useGitChangeset = () => {
   const gitChangeset = useGitDiffData()
   const projectInfoRef = useProjectInfo()
   return computed(() => {

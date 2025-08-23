@@ -1,7 +1,13 @@
 import { computed } from 'vue'
 import { useCoverageData } from './data'
 import { useGitChangeLineSet } from '../git-diff/git-changeset'
-import type { BranchBlock, CodeRanger, MaybeCodeRanger, OptionalColumnPosition } from '../../type'
+import type {
+  BranchBlock,
+  CodeRanger,
+  CoverageItem,
+  MaybeCodeRanger,
+  OptionalColumnPosition,
+} from '../../type'
 import { useDatas } from '../../service/http-service'
 import { defineResource } from '@cexoso/vue-singleton'
 
@@ -80,7 +86,7 @@ export function isPositionEqual(a: OptionalColumnPosition, b: OptionalColumnPosi
 
 export const useGetBranchHasChange = () => {
   const gitDiffData = useGitChangeLineSet()
-  const getBranchHasChange = (block: BranchBlock, filePath: string) => {
+  return (block: BranchBlock, filePath: string) => {
     const diffData = gitDiffData.value
     if (diffData === undefined) {
       return block.locations.map(() => true)
@@ -108,148 +114,101 @@ export const useGetBranchHasChange = () => {
       return false
     })
   }
-  return getBranchHasChange
 }
 
-export const useGetStatementsCoverageDataByFilepath = () => {
+const useComputeCoverageDataByFile = () => {
+  type coverageDataComputer = (coverageItem: CoverageItem, result: CoverageDataDeatil) => void
   const coverageData = useCoverageData()
-  const isBlockHasChange = useIsCodeRangerHasChange()
-  return computed(() => (filePath: string) => {
+  return computed(() => (filePath: string, computer: coverageDataComputer) => {
+    const result = { coverageCount: 0, count: 0 }
     const cdata = coverageData.value
-    if (cdata === undefined) {
-      return { count: 0, coverageCount: 0 }
+    const coverageItem = cdata?.[filePath]
+    if (coverageItem === undefined) {
+      return result
     }
-    let count = 0
-    let coverageCount = 0
-    const v = cdata[filePath]
-    if (v === undefined) {
-      return {
-        coverageCount: 0,
-        count: 0,
-      }
-    }
-    const { s, statementMap } = v.coverage
-    for (const [id, c] of Object.entries(s)) {
-      const block = statementMap[id]
-      if (isBlockHasChange(block, filePath)) {
-        if (c !== 0) {
-          coverageCount += 1
-        }
-        count += 1
-      }
-    }
-    return {
-      coverageCount,
-      count,
-    }
+    computer(coverageItem, result)
+    return result
   })
 }
 
-export const useGetBranchCoverageDataByFilepath = () => {
-  const coverageData = useCoverageData()
-  const getBranchHasChange = useGetBranchHasChange()
-  return computed(() => (filePath: string) => {
-    const cdata = coverageData.value
-    if (cdata === undefined) {
-      return { count: 0, coverageCount: 0 }
-    }
-    let count = 0
-    let coverageCount = 0
-    const v = cdata[filePath]
-    if (v === undefined) {
-      return {
-        coverageCount: 0,
-        count: 0,
-      }
-    }
-    const { b, branchMap } = v.coverage
-    for (const [id, branches] of Object.entries(b)) {
-      const block = branchMap[id]
-      const changes = getBranchHasChange(block, filePath)
-      // 仅保留修改过的分支
-      const chanegedBranches = branches.filter((_, key) => changes[key])
+export const useGetStatementsCoverageDataByFilepath = () => {
+  const isBlockHasChange = useIsCodeRangerHasChange()
+  const computeCoverageDataByFile = useComputeCoverageDataByFile()
+  return computed(
+    () => (filePath: string) =>
+      computeCoverageDataByFile.value(filePath, (v, result) => {
+        const { s, statementMap } = v.coverage
+        for (const [id, c] of Object.entries(s)) {
+          const block = statementMap[id]
+          if (isBlockHasChange(block, filePath)) {
+            if (c !== 0) {
+              result.coverageCount += 1
+            }
+            result.count += 1
+          }
+        }
+      })
+  )
+}
 
-      coverageCount += chanegedBranches.reduce((acc, item) => acc + (item !== 0 ? 1 : 0), 0)
-      count += chanegedBranches.length
-    }
-    return {
-      coverageCount,
-      count,
-    }
+export const useGetBranchCoverageDataByFilepath = () => {
+  const getBranchHasChange = useGetBranchHasChange()
+  const computeCoverageDataByFile = useComputeCoverageDataByFile()
+  return computed(() => (filePath: string) => {
+    return computeCoverageDataByFile.value(filePath, (v, result) => {
+      const { b, branchMap } = v.coverage
+      for (const [id, branches] of Object.entries(b)) {
+        const block = branchMap[id]
+        const changes = getBranchHasChange(block, filePath)
+        // 仅保留修改过的分支
+        const chanegedBranches = branches.filter((_, key) => changes[key])
+
+        result.coverageCount += chanegedBranches.reduce((acc, item) => acc + (item !== 0 ? 1 : 0), 0)
+        result.count += chanegedBranches.length
+      }
+    })
   })
 }
 
 export const useGetLinesCoverageDataByFilepath = () => {
   // 行覆盖率就是指令覆盖率，只是要排除掉同行的两条指令
-  const coverageData = useCoverageData()
   const isBlockHasChange = useIsCodeRangerHasChange()
+  const computeCoverageDataByFile = useComputeCoverageDataByFile()
   return computed(() => (filePath: string) => {
-    const cdata = coverageData.value
-    if (cdata === undefined) {
-      return { count: 0, coverageCount: 0 }
-    }
-    let count = 0
-    let coverageCount = 0
-    const v = cdata[filePath]
-    if (v === undefined) {
-      return {
-        coverageCount: 0,
-        count: 0,
-      }
-    }
-
-    const { s, statementMap } = v.coverage
-    const alllines = new Set()
-    const clines = new Set()
-
-    for (const [id, c] of Object.entries(s)) {
-      const block = statementMap[id]
-      if (isBlockHasChange(block, filePath)) {
-        const i = block.start.line
-        if (c !== 0) {
-          clines.add(i)
+    return computeCoverageDataByFile.value(filePath, (v, result) => {
+      const { s, statementMap } = v.coverage
+      const alllines = new Set()
+      const clines = new Set()
+      for (const [id, c] of Object.entries(s)) {
+        const block = statementMap[id]
+        if (isBlockHasChange(block, filePath)) {
+          const i = block.start.line
+          if (c !== 0) {
+            clines.add(i)
+          }
+          alllines.add(i)
         }
-        alllines.add(i)
       }
-    }
-    coverageCount += clines.size
-    count += alllines.size
-    return {
-      coverageCount,
-      count,
-    }
+      result.coverageCount += clines.size
+      result.count += alllines.size
+    })
   })
 }
 
 export const useGetFunctionCoverageDataByFilepath = () => {
-  const coverageData = useCoverageData()
   const isBlockHasChange = useIsCodeRangerHasChange()
+  const computeCoverageDataByFile = useComputeCoverageDataByFile()
   return computed(() => (filePath: string) => {
-    const cdata = coverageData.value
-    if (cdata === undefined) {
-      return { count: 0, coverageCount: 0 }
-    }
-    let count = 0
-    let coverageCount = 0
-    const v = cdata[filePath]
-    if (v === undefined) {
-      return {
-        coverageCount: 0,
-        count: 0,
-      }
-    }
-    const { f, fnMap } = v.coverage
-    for (const [id, c] of Object.entries(f)) {
-      if (isBlockHasChange(fnMap[id].loc, filePath)) {
-        if (c !== 0) {
-          coverageCount += 1
+    return computeCoverageDataByFile.value(filePath, (v, result) => {
+      const { f, fnMap } = v.coverage
+      for (const [id, c] of Object.entries(f)) {
+        if (isBlockHasChange(fnMap[id].loc, filePath)) {
+          if (c !== 0) {
+            result.coverageCount += 1
+          }
+          result.count += 1
         }
-        count += 1
       }
-    }
-    return {
-      coverageCount,
-      count,
-    }
+    })
   })
 }

@@ -7,7 +7,7 @@ import type { AllBlock } from './type'
 
 export const useUncoverBlock = () => {
   const coverageData = useCoverageData()
-  const innerHasChange = useHasChange()
+  const hasChange = useHasChange()
   const file = useFilePath()
   const getBranchHasChange = useGetBranchHasChange()
   const sourceHelperRef = useSourceHelper()
@@ -28,7 +28,7 @@ export const useUncoverBlock = () => {
 
     for (const [s, count] of Object.entries(coverage.s)) {
       const record = coverage.statementMap[s]
-      if (innerHasChange(record) && count === 0) {
+      if (hasChange(record) && count === 0) {
         uncoverStatementBlock.push({
           block: record,
           type: 'ranger',
@@ -72,7 +72,7 @@ export const useUncoverBlock = () => {
 
     for (const [f, counts] of Object.entries(coverage.f)) {
       const record = coverage.fnMap[f]
-      if (innerHasChange(record.loc) && counts === 0) {
+      if (hasChange(record.loc) && counts === 0) {
         const decl = record.decl || record.loc
         uncoverStatementBlock.push({
           block: {
