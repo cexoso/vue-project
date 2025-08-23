@@ -17,7 +17,7 @@
     "tslib": "^2.8.1",
     "@types/istanbul-lib-report": "^3.0.3",
     "@types/shelljs": "^0.8.17",
-    "@cexoso/diff-template": "workspace: *"
+    "@cexoso/diff-template": "workspace:^"
   },
   "devDependencies": {
     "@cexoso/configs": "workspace: *",

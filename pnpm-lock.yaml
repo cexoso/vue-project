@@ -151,7 +151,7 @@ importers:
   packages/git-diff-report:
     dependencies:
       '@cexoso/diff-template':
-        specifier: 'workspace: *'
+        specifier: workspace:^
         version: link:../diff-template
       '@types/istanbul-lib-report':
         specifier: ^3.0.3
