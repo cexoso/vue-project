@@ -1,9 +1,10 @@
-name: Run Tests on PR to main
+name: test
 
 # 触发条件：当有针对 main 分支的 PR 被创建或更新时
 on:
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   test:
