@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.4
+
+### Patch Changes
+
+- d20558d: 修复未覆盖代码存在嵌套行为时，代码展示异常的问题
+
 ## 0.0.3
 
 ### Patch Changes
