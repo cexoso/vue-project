@@ -264,11 +264,21 @@ describe('交互相关', () => {
       },
     })
 
+    await screen.findByText('你可以使用 m 键来切换全量/增量覆盖率')
     const statements = await screen.findByRole('panel', { name: 'Statements' })
     await findByText(statements, '33.33%')
     userEvent.keyboard('m')
     await findByText(statements, '89.44%') // 按下空格，会切换成全量模式查看数据
     userEvent.keyboard('M')
     await findByText(statements, '33.33%') // 在松手后，会再次切换成增量模式
+  })
+  it('当没有 git diff 时，会展示 tips 告诉用户可以使用怎样的命令来开启 diff 报告', async () => {
+    const screen = await renderTestApp({
+      async play() {
+        mockBase()
+      },
+    })
+    await screen.findByRole('panel', { name: 'Statements' })
+    expect(screen.queryByText('你可以使用 m 键来切换全量/增量覆盖率')).eq(null)
   })
 })

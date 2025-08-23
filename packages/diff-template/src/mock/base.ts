@@ -14,7 +14,7 @@ export const mockGCMExample = () => {
   const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
   getCoverageDataStub.returns(mock.coverageData)
   const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
-  getGitDiffLogStub.resolves(mock.diff)
+  getGitDiffLogStub.returns(mock.diff)
   const getMetaInfoStub = getOrCreateStub(http, 'getMetaInfo')
   getMetaInfoStub.returns(mock.metaInfo)
 }
@@ -24,7 +24,7 @@ export const mockBase = () => {
   const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
   getCoverageDataStub.returns(DirModeJSON as unknown as CoverageData)
   const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
-  getGitDiffLogStub.resolves('')
+  getGitDiffLogStub.returns('')
   const getMetaInfoStub = getOrCreateStub(http, 'getMetaInfo')
   getMetaInfoStub.returns(metaInfo)
 }

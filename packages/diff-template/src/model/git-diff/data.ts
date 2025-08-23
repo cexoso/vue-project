@@ -1,18 +1,18 @@
-import { define, defineResource } from '@cexoso/vue-singleton'
+import { define } from '@cexoso/vue-singleton'
 import { computed, shallowRef } from 'vue'
 import { useDatas } from '../../service/http-service'
 
-const useGitDiffDataSource = defineResource(() => {
+export const useRawGitDiffData = () => {
   const http = useDatas()
-  return async () => http.getGitDiffLog()
-})
+  return http.getGitDiffLog()
+}
 
 export const useGitDiffData = () => {
-  const gitDiffDataSource = useGitDiffDataSource()
+  const gitDiffDataSource = useRawGitDiffData()
   const openGitDiffFeature = useOpenGitDiffFeature()
   return computed(() => {
     if (openGitDiffFeature.value) {
-      return gitDiffDataSource.data.value
+      return gitDiffDataSource
     }
     return ''
   })
