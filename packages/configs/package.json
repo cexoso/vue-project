@@ -5,9 +5,6 @@
   "publishConfig": {
     "linkDirectory": true
   },
-  "scripts": {
-    "test": "vitest --reporter=dot"
-  },
   "exports": {
     "./tsconfig.node.json": "./src/tsconfig.node.json"
   },
