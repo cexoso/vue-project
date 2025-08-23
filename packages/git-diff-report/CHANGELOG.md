@@ -1,5 +1,12 @@
 # @cexoso/git-diff-report
 
+## 0.0.7
+
+### Patch Changes
+
+- Updated dependencies [fbf5978]
+  - @cexoso/diff-template@0.0.7
+
 ## 0.0.6
 
 ### Patch Changes

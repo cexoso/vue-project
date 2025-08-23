@@ -1,6 +1,6 @@
 {
   "name": "@cexoso/git-diff-report",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "./dist/index.cjs",
   "scripts": {
     "type-check": "tsc --noEmit",
