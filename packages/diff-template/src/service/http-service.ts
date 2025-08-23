@@ -9,17 +9,11 @@ export const useDatas = define(() => {
     coverageData: CoverageData
     metaInfo: { projectInfo: string }
   }
-  const getCoverageData = async () => {
-    return state.coverageData
-  }
+  const getCoverageData = () => state.coverageData
 
-  const getGitDiffLog = async () => {
-    return state.diff
-  }
+  const getGitDiffLog = () => state.diff
 
-  const getMetaInfo = async () => {
-    return state.metaInfo
-  }
+  const getMetaInfo = () => state.metaInfo
 
   return {
     getCoverageData,

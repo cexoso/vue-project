@@ -12,35 +12,35 @@ export const mockGCMExample = () => {
   const http = useDatas()
   const mock = GCMMock()
   const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
-  getCoverageDataStub.resolves(mock.coverageData)
+  getCoverageDataStub.returns(mock.coverageData)
   const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
   getGitDiffLogStub.resolves(mock.diff)
   const getMetaInfoStub = getOrCreateStub(http, 'getMetaInfo')
-  getMetaInfoStub.resolves(mock.metaInfo)
+  getMetaInfoStub.returns(mock.metaInfo)
 }
 
 export const mockBase = () => {
   const http = useDatas()
   const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
-  getCoverageDataStub.resolves(DirModeJSON as unknown as CoverageData)
+  getCoverageDataStub.returns(DirModeJSON as unknown as CoverageData)
   const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
   getGitDiffLogStub.resolves('')
   const getMetaInfoStub = getOrCreateStub(http, 'getMetaInfo')
-  getMetaInfoStub.resolves(metaInfo)
+  getMetaInfoStub.returns(metaInfo)
 }
 
 export const mockSingleDirMode = () => {
   mockBase()
   const http = useDatas()
   const getCoverageDataStub = getOrCreateStub(http, 'getCoverageData')
-  getCoverageDataStub.resolves(json as unknown as CoverageData)
+  getCoverageDataStub.returns(json as unknown as CoverageData)
 }
 
 export const mockGitDiff = () => {
   const http = useDatas()
   mockBase()
   const getGitDiffLogStub = getOrCreateStub(http, 'getGitDiffLog')
-  getGitDiffLogStub.resolves(dirModeGitLog)
+  getGitDiffLogStub.returns(dirModeGitLog)
 }
 
 export const mockContentDetail = () => {

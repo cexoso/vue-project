@@ -1,13 +1,14 @@
-import { defineResource } from '@cexoso/vue-singleton'
 import { computed } from 'vue'
 import { useDatas } from '../../service/http-service'
 
-const useCoverageDataSource = defineResource(() => {
+const useCoverageDataSource = () => {
   const http = useDatas()
-  return () => http.getCoverageData()
-})
+  return http.getCoverageData()
+}
 
 export const useCoverageData = () => {
   const coverageDataSource = useCoverageDataSource()
-  return computed(() => coverageDataSource.data.value)
+  return computed(() => {
+    return coverageDataSource
+  })
 }

@@ -9,12 +9,11 @@ import type {
   OptionalColumnPosition,
 } from '../../type'
 import { useDatas } from '../../service/http-service'
-import { defineResource } from '@cexoso/vue-singleton'
 
-const useMetaInfo = defineResource(() => {
-  const http = useDatas()
-  return async () => http.getMetaInfo()
-})
+const useMetaInfo = () => {
+  const data = useDatas()
+  return data.getMetaInfo()
+}
 
 interface CoverageDataDeatil {
   count: number
@@ -38,17 +37,16 @@ export const initAllCoverageData = (): AllCoverageDataDeatil => {
 }
 
 export const useProjectInfo = () => {
-  const { data } = useMetaInfo()
+  const data = useMetaInfo()
   return computed(() => {
-    return data.value?.projectInfo ?? ''
+    return data.projectInfo ?? ''
   })
 }
 
 export const useIsCodeRangerHasChange = () => {
   const gitDiffData = useGitChangeLineSet()
-  const { data } = useMetaInfo()
+  const projectInfo = useProjectInfo()
   return (block: CodeRanger, filePath: string) => {
-    const projectInfo = data.value?.projectInfo
     if (projectInfo === undefined) {
       return true
     }
