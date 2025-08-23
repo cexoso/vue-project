@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.6
+
+### Patch Changes
+
+- 47f834c: 支持切换全量增量模式的交互
+
 ## 0.0.5
 
 ### Patch Changes
