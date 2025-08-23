@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.7
+
+### Patch Changes
+
+- fbf5978: 仅在有 git diff 数据时才展示 tips
+
 ## 0.0.6
 
 ### Patch Changes

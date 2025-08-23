@@ -1,6 +1,6 @@
 {
   "name": "@cexoso/diff-template",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "type-check": "vue-tsc --noEmit -p tsconfig.json",
     "type-check:watch": "vue-tsc --noEmit -p tsconfig.json --watch",
