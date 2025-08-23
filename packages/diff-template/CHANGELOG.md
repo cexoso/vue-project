@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.5
+
+### Patch Changes
+
+- 315166c: 去掉没有实现的功能，这个功能在我看来不重要，懒得实现了
+
 ## 0.0.4
 
 ### Patch Changes
