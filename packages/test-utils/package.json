@@ -31,7 +31,7 @@
   "license": "MIT",
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
-    "@cexoso/ts-pkg-build": "^0.0.23",
+    "@cexoso/ts-pkg-build": "^0.0.24",
     "@testing-library/dom": "^10.4.0",
     "@vitejs/plugin-vue-jsx": "^5.0.1",
     "happy-dom": "^18.0.1",

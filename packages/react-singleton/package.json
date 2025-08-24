@@ -1,6 +1,6 @@
 {
-  "name": "@cexoso/vue-singleton",
-  "version": "0.0.13",
+  "name": "@cexoso/react-singleton",
+  "version": "0.0.0",
   "description": "",
   "publishConfig": {
     "directory": "dist",
@@ -32,18 +32,21 @@
     "@cexoso/test-utils": "workspace: *",
     "@cexoso/ts-pkg-build": "^0.0.24",
     "@testing-library/dom": "^10.4.0",
+    "@types/react": "^19.1.11",
+    "@types/react-dom": "^19.1.7",
     "@types/sinon": "^17.0.4",
     "@vitejs/plugin-vue-jsx": "^5.0.1",
     "@vitest/coverage-v8": "2.1.9",
     "happy-dom": "^18.0.1",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
     "serve": "^14.2.4",
     "sinon": "^21.0.0",
     "typescript": "^5.5.4",
     "vite": "^7.0.5",
-    "vitest": "2.1.9",
-    "vue": "^3.5.18"
+    "vitest": "2.1.9"
   },
-  "peerDependencies": {
-    "vue": "^3.0.0"
+  "dependencies": {
+    "rxjs": "^7.8.2"
   }
 }

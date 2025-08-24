@@ -14,7 +14,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "@cexoso/ts-pkg-build": "^0.0.23",
+    "@cexoso/ts-pkg-build": "^0.0.24",
     "typescript": "^5.5.4"
   }
 }
