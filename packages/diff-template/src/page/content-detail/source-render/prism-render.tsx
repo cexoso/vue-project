@@ -41,8 +41,7 @@ export const PrismRender = defineComponent({
           class="language-container special-style"
           style="padding: 0; margin: 0; background-color: var(--color-gray-90)"
         >
-          {/* 先暂时使用 key 的方法强迫 vue 强制更新 code */}
-          <code ref={codeRef} class="language-typescript keep-markup" key={Math.random()}>
+          <code ref={codeRef} class="language-typescript keep-markup">
             {children}
           </code>
         </pre>
