@@ -31,11 +31,12 @@ describe('define', () => {
     fireEvent.click(screen.getByText('点击新增'))
     await screen.findByText('count: 1')
 
-    // app.runWithContext(() => {
-    //   const count = useCount()
-    //   count.value = 10
-    // })
-    // await findByText('count: 10')
+    screen.play(() => {
+      const [_count, setCount] = useCount()
+      return () => setCount(10)
+    })
+
+    await screen.findByText('count: 10')
   })
   it('不同的 app 之间是隔离的，不会相互影响', async () => {
     // 创建了一个 App，通过操作修改了 count 的值
