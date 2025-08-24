@@ -52,7 +52,7 @@ export const useIsCodeRangerHasChange = () => {
     }
     const diffData = gitDiffData.value
     if (diffData === undefined) {
-      // undefined 表示没有拉取 git diff 的情况，这种情况需要全量统计
+      // undefined 表示没有 git diff 的情况，这种情况需要全量统计
       return true
     }
 
@@ -62,11 +62,7 @@ export const useIsCodeRangerHasChange = () => {
       return false
     }
 
-    const {
-      start: { line: startLine },
-      end: { line: endLine },
-    } = block
-    for (let i = startLine; i <= endLine; i++) {
+    for (let i = block.start.line; i <= block.end.line; i++) {
       if (changeLines.has(i)) {
         return true
       }
