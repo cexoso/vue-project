@@ -2,9 +2,14 @@ import { define } from '@cexoso/vue-singleton'
 import { computed, shallowRef } from 'vue'
 import { useDatas } from '../../service/http-service'
 
-export const useRawGitDiffData = () => {
+const useRawGitDiffData = () => {
   const http = useDatas()
   return http.getGitDiffLog()
+}
+
+export const useHasGitDiff = () => {
+  const rawGitDiffData = useRawGitDiffData()
+  return computed(() => Boolean(rawGitDiffData))
 }
 
 export const useGitDiffData = () => {

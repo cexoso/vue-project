@@ -5,7 +5,7 @@
       <span class="ml-4" v-if="isDirMode"> {{ dir }} </span>
     </h1>
   </div>
-  <div class="text-gray-500 mb-2" v-if="rawGitDiffData">你可以使用 m 键来切换全量/增量覆盖率</div>
+  <div class="text-gray-500 mb-2" v-if="hasGitDiff">你可以使用 m 键来切换全量/增量覆盖率</div>
   <CoveragePanel :coverage-data="coverageData" />
 </template>
 
@@ -15,7 +15,7 @@ import { computed } from 'vue'
 import { useDir, useFiles, useIsDirMode } from './controller'
 import { initAllCoverageData } from '../../model/coverage-data/coverage-handle'
 import { usePush } from '../../utils/use-router'
-import { useRawGitDiffData } from '../../model/git-diff/data'
+import { useHasGitDiff } from '../../model/git-diff/data'
 const dir = useDir()
 
 const isDirMode = useIsDirMode()
@@ -55,5 +55,5 @@ const push = usePush()
 const handleAllFileClick = () => {
   push({ name: 'index' })
 }
-const rawGitDiffData = useRawGitDiffData()
+const hasGitDiff = useHasGitDiff()
 </script>

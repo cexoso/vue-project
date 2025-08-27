@@ -1,2 +1,2 @@
 export { useGitChangeLineSet } from './git-changeset'
-export { useToggleGitDiffFeature, useRawGitDiffData } from './data'
+export { useToggleGitDiffFeature, useHasGitDiff } from './data'
