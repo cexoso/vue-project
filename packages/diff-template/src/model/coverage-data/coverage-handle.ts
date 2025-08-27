@@ -43,7 +43,7 @@ export const useProjectInfo = () => {
   })
 }
 
-export const useIsCodeRangerHasChange = () => {
+export const useIsBlockHasChange = () => {
   const gitDiffData = useGitChangeLineSet()
   const projectInfo = useProjectInfo()
   return (block: CodeRanger, filePath: string) => {
@@ -126,7 +126,7 @@ const useComputeCoverageDataByFile = () => {
 }
 
 export const useGetStatementsCoverageDataByFilepath = () => {
-  const isBlockHasChange = useIsCodeRangerHasChange()
+  const isBlockHasChange = useIsBlockHasChange()
   const computeCoverageDataByFile = useComputeCoverageDataByFile()
   return computed(
     () => (filePath: string) =>
@@ -166,7 +166,7 @@ export const useGetBranchCoverageDataByFilepath = () => {
 
 export const useGetLinesCoverageDataByFilepath = () => {
   // 行覆盖率就是指令覆盖率，只是要排除掉同行的两条指令
-  const isBlockHasChange = useIsCodeRangerHasChange()
+  const isBlockHasChange = useIsBlockHasChange()
   const computeCoverageDataByFile = useComputeCoverageDataByFile()
   return computed(() => (filePath: string) => {
     return computeCoverageDataByFile.value(filePath, (v, result) => {
@@ -190,7 +190,7 @@ export const useGetLinesCoverageDataByFilepath = () => {
 }
 
 export const useGetFunctionCoverageDataByFilepath = () => {
-  const isBlockHasChange = useIsCodeRangerHasChange()
+  const isBlockHasChange = useIsBlockHasChange()
   const computeCoverageDataByFile = useComputeCoverageDataByFile()
   return computed(() => (filePath: string) => {
     return computeCoverageDataByFile.value(filePath, (v, result) => {

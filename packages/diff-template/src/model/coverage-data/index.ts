@@ -1,7 +1,7 @@
 export { useCoverageData } from './data'
 export {
   initAllCoverageData,
-  useIsCodeRangerHasChange,
+  useIsBlockHasChange,
   isCodeRanger,
   isPositionEqual,
   useGetBranchHasChange,

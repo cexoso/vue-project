@@ -6,7 +6,7 @@ import {
   useGetFunctionCoverageDataByFilepath,
   useGetLinesCoverageDataByFilepath,
   useGetStatementsCoverageDataByFilepath,
-  useIsCodeRangerHasChange,
+  useIsBlockHasChange,
 } from '../../model/coverage-data/coverage-handle'
 
 export const useFilePath = () => {
@@ -17,7 +17,7 @@ export const useFilePath = () => {
 
 export const useHasChange = () => {
   const file = useFilePath()
-  const isCodeRangerHasChange = useIsCodeRangerHasChange()
+  const isCodeRangerHasChange = useIsBlockHasChange()
   return (codeRanger: CodeRanger) => isCodeRangerHasChange(codeRanger, file)
 }
 
