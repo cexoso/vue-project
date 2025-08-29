@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.14
+
+### Patch Changes
+
+- 43af029: 下掉不应该是这个库提供的 withResolver 方法
+
 ## 0.0.13
 
 ### Patch Changes
