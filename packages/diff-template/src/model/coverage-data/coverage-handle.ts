@@ -113,15 +113,17 @@ export const useGetBranchHasChange = () => {
 const useComputeCoverageDataByFile = () => {
   type coverageDataComputer = (coverageItem: CoverageItem, result: CoverageDataDeatil) => void
   const coverageData = useCoverageData()
-  return computed(() => (filePath: string, computer: coverageDataComputer) => {
-    const result = { coverageCount: 0, count: 0 }
+  return computed(() => {
     const cdata = coverageData.value
-    const coverageItem = cdata?.[filePath]
-    if (coverageItem === undefined) {
+    return (filePath: string, computer: coverageDataComputer) => {
+      const result = { coverageCount: 0, count: 0 }
+      const coverageItem = cdata?.[filePath]
+      if (coverageItem === undefined) {
+        return result
+      }
+      computer(coverageItem, result)
       return result
     }
-    computer(coverageItem, result)
-    return result
   })
 }
 
