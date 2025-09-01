@@ -1,4 +1,9 @@
-export const withResolvers = <T>() => {
+interface PromiseWithResolvers<T> {
+  promise: Promise<T>
+  resolve: (value: T | PromiseLike<T>) => void
+  reject: (reason?: any) => void
+}
+export const withResolvers = <T>(): PromiseWithResolvers<T> => {
   if (typeof Promise.withResolvers === 'function') {
     return Promise.withResolvers()
   }
