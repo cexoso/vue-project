@@ -1,0 +1,39 @@
+{
+  "name": "@cexoso/load-config",
+  "version": "0.0.1",
+  "description": "",
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false
+  },
+  "files": [
+    "src",
+    "!**/*.spec.ts",
+    "!**/*.spec.tsx"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "repository": "https://github.com/cexoso/vue-project",
+  "scripts": {
+    "type-check": "tsc --noEmit -p tsconfig.json",
+    "type-check:watch": "tsc --noEmit -p tsconfig.json --watch",
+    "test": "vitest --reporter=dot",
+    "build": "ts-pkg-build build --format ESM --format CommonJS",
+    "ts-lint": "tsc --noEmit",
+    "release": "npm run ts-lint && vitest --run && npm run build",
+    "prepublishOnly": "npm run release"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cexoso/configs": "workspace: *",
+    "@cexoso/ts-pkg-build": "^0.0.24",
+    "@cexoso/utils": "workspace: *",
+    "@types/node": "^22.14.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2",
+    "vitest": "^3.2.4"
+  }
+}
