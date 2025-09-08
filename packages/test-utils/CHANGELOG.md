@@ -1,5 +1,11 @@
 # @cexoso/test-utils
 
+## 0.0.4
+
+### Patch Changes
+
+- 6a605a5: 修复多参数的函数类型失效的问题
+
 ## 0.0.3
 
 ### Patch Changes
