@@ -25,7 +25,7 @@ export function getOrCreateStub<T extends object, K extends keyof T>(service: T,
     return x;
   };
   type Value = T[K];
-  type Method = Value extends (i: infer I) => infer O ? (i: I) => O : never;
+  type Method = Value extends (...i: infer I) => infer O ? (...i: I) => O : never;
   type Req = Parameters<Method>;
   type Res = ReturnType<Method>;
   const stubMethod: unknown = getOrCreateMethodStubhandler(methodMap);
