@@ -32,6 +32,9 @@ export default defineConfig(() => {
         instances: [{ browser: 'chromium' }],
         testerScripts: [{ src: './setup-for-test.ts' }],
       },
+      coverage: {
+        exclude: ["**/*.stories.tsx"]
+      }
     },
   }
 })

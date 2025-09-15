@@ -6,6 +6,7 @@
     "type-check:watch": "vue-tsc --noEmit -p tsconfig.json --watch",
     "build:web": "vite build",
     "test": "vitest --reporter=dot",
+    "coverage": "vitest --coverage --reporter=dot --run",
     "prepublishOnly": "npm run build",
     "storybook": "storybook dev -p 6006",
     "build": "bash ./bin/build.sh",
