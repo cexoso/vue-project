@@ -1,0 +1,38 @@
+{
+  "name": "@cexoso/grpc-web-utils",
+  "version": "0.0.1",
+  "description": "",
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false
+  },
+  "files": [
+    "src",
+    "!**/*.spec.ts",
+    "!**/*.spec.tsx"
+  ],
+  "main": "./src/index.ts",
+  "module": "./src/index.ts",
+  "repository": "https://github.com/cexoso/vue-project",
+  "scripts": {
+    "test": "vitest --reporter=dot",
+    "coverage": "vitest run --coverage",
+    "build": "ts-pkg-build build --format ESM --format CommonJS",
+    "ts-lint": "tsc --noEmit",
+    "release": "npm run ts-lint && vitest --run && npm run build",
+    "prepublishOnly": "npm run release"
+  },
+  "sideEffects": false,
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@cexoso/configs": "workspace: *",
+    "@cexoso/ts-pkg-build": "^0.0.24",
+    "happy-dom": "^18.0.1",
+    "typescript": "^5.5.4",
+    "vite": "^7.0.5",
+    "vitest": "^2.0.4"
+  },
+  "peerDependencies": {}
+}
