@@ -5,3 +5,5 @@
 
 export { decode } from './decode'
 export { encode } from './encode'
+
+export { base64ToUint8Array, uint8ArrayToBase64 } from './base64-to-uint8array'
