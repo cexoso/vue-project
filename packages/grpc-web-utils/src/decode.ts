@@ -13,7 +13,6 @@ export const decode = (input: Uint8Array) => {
   offset += 4
 
   const message = input.subarray(offset, offset + packetLength)
-  offset += packetLength
 
   return message
 }
