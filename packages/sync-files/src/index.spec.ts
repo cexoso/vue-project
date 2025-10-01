@@ -1,18 +1,17 @@
 import { describe, it, beforeAll, afterAll } from 'vitest'
 import { Server } from 'http'
-import { app } from './index'
+import { launch } from './index'
 import supertest from 'supertest'
 
 describe('index', () => {
   let server: Server
   beforeAll(async () => {
-    server = await app.listen()
+    server = launch()
   })
   afterAll(() => {
     server?.close()
-    app.reset()
   })
   it('i', async () => {
-    return supertest(server).post('/uploadFile').expect(200)
+    return supertest(server).get('/').expect(200)
   })
 })

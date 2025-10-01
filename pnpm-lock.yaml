@@ -271,7 +271,7 @@ importers:
         version: 5.9.2
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(tsx@4.20.4)
+        version: 7.0.5(@types/node@22.17.2)
       vitest:
         specifier: ^2.0.4
         version: 2.1.9(happy-dom@18.0.1)
@@ -358,7 +358,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(tsx@4.20.4)
+        version: 7.0.5(@types/node@22.17.2)
       vitest:
         specifier: 2.1.9
         version: 2.1.9(happy-dom@18.0.1)
@@ -366,9 +366,9 @@ importers:
 
   packages/sync-files:
     dependencies:
-      '@cexoso/ff-server':
-        specifier: 'workspace: *'
-        version: link:../functional-framework/framework
+      koa:
+        specifier: ^3.0.0
+        version: 3.0.1
     devDependencies:
       '@cexoso/configs':
         specifier: 'workspace: *'
@@ -376,6 +376,9 @@ importers:
       '@cexoso/ts-pkg-build':
         specifier: ^0.0.24
         version: 0.0.24(typescript@5.9.3)
+      '@types/koa':
+        specifier: ^2.15.0
+        version: 2.15.0
       '@types/supertest':
         specifier: ^6.0.3
         version: 6.0.3
@@ -422,7 +425,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(tsx@4.20.4)
+        version: 7.0.5(@types/node@22.17.2)
       vitest:
         specifier: ^2.0.4
         version: 2.1.9(happy-dom@18.0.1)
@@ -453,7 +456,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(tsx@4.20.4)
+        version: 7.0.5(@types/node@22.17.2)
       vitest:
         specifier: 2.1.9
         version: 2.1.9(happy-dom@18.0.1)
@@ -499,7 +502,7 @@ importers:
         version: 5.8.3
       vite:
         specifier: ^7.0.5
-        version: 7.0.5(tsx@4.20.4)
+        version: 7.0.5(@types/node@22.17.2)
       vitest:
         specifier: 2.1.9
         version: 2.1.9(happy-dom@18.0.1)
@@ -3928,7 +3931,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.28.0(@babel/core@7.28.0)
       '@rolldown/pluginutils': 1.0.0-beta.29
       '@vue/babel-plugin-jsx': 1.4.0(@babel/core@7.28.0)
-      vite: 7.0.5(tsx@4.20.4)
+      vite: 7.0.5(@types/node@22.17.2)
       vue: 3.5.18(typescript@5.8.3)
     transitivePeerDependencies:
       - supports-color
@@ -3945,7 +3948,7 @@ packages:
       '@babel/plugin-transform-typescript': 7.28.0(@babel/core@7.28.0)
       '@rolldown/pluginutils': 1.0.0-beta.29
       '@vue/babel-plugin-jsx': 1.4.0(@babel/core@7.28.0)
-      vite: 7.0.5(tsx@4.20.4)
+      vite: 7.0.5(@types/node@22.17.2)
       vue: 3.5.20(typescript@5.8.3)
     transitivePeerDependencies:
       - supports-color
@@ -4135,7 +4138,7 @@ packages:
       '@vitest/spy': 3.2.4
       estree-walker: 3.0.3
       magic-string: 0.30.18
-      vite: 7.0.5(@types/node@22.17.2)
+      vite: 7.0.5(tsx@4.20.4)
     dev: true
 
   /@vitest/pretty-format@2.0.5:
