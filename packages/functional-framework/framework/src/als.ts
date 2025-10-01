@@ -2,6 +2,7 @@ import { AsyncLocalStorage } from 'node:async_hooks'
 import { Context } from 'koa'
 
 const storage = new AsyncLocalStorage<Context>()
+export const appScopeServiceMapSymbol = Symbol()
 
 export const run = (ctx: Context, callback: () => any) => {
   return storage.run(ctx, () => callback())

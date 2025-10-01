@@ -3,9 +3,11 @@ import detectPort from 'detect-port'
 import { parentPort } from 'worker_threads'
 import { Method } from '../router'
 import Router from 'koa-router'
-import { run } from '../als'
+import { run, appScopeServiceMapSymbol } from '../als'
 import body from 'koa-body'
 import { LifeCycleManager } from './life-cycle-manager'
+
+const appScopeServiceMap = () => new WeakMap()
 
 export class App<T extends { [key: string]: Method }> {
   private app = new Koa({
@@ -41,6 +43,7 @@ export class App<T extends { [key: string]: Method }> {
   }
   private useALS() {
     this.app.use(async (ctx, next) => {
+      ctx[appScopeServiceMapSymbol] = appScopeServiceMap
       // 确保所有的中间件都跑在 ALS 下
       await run(ctx, async () => {
         await next()
