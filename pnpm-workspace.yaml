@@ -1,2 +1,3 @@
 packages:
   - 'packages/*'
+  - 'packages/functional-framework/*' # 我自治的函数式框架

@@ -1,0 +1,6 @@
+{
+  "extends": "@cexoso/configs/tsconfig.node.json",
+  "compilerOptions": {
+    "jsx": "react-jsx"
+  }
+}
