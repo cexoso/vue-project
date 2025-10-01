@@ -28,7 +28,12 @@
   "license": "MIT",
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
-    "@cexoso/ts-pkg-build": "^0.0.24"
+    "@cexoso/ts-pkg-build": "^0.0.24",
+    "@types/supertest": "^6.0.3",
+    "supertest": "^7.1.4",
+    "tsx": "^4.19.3",
+    "vite": "^7.1.7",
+    "vitest": "^3.2.4"
   },
   "dependencies": {
     "@cexoso/ff-server": "workspace: *"
