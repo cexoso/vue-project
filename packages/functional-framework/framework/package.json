@@ -2,11 +2,21 @@
   "name": "@cexoso/ff-server",
   "version": "1.0.0",
   "description": "",
+  "publishConfig": {
+    "directory": "dist",
+    "linkDirectory": false
+  },
   "exports": {
     ".": "./index.ts",
     "./middlewares": "./src/middlewares/index.ts",
     "./hooks": "./src/hooks/index.ts",
     "./test": "./src/test-utils/index.ts"
+  },
+  "scripts": {
+    "build": "ts-pkg-build build --format ESM --format CommonJS",
+    "release": "npm run ts-lint && npm run build",
+    "prepublishOnly": "npm run release",
+    "ts-lint": "tsc --noEmit"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +30,7 @@
   },
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
+    "@cexoso/ts-pkg-build": "^0.0.24",
     "@types/koa": "^2.15.0",
     "@types/koa-router": "^7.4.8",
     "@types/node": "^24.0.10"

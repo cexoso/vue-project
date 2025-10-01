@@ -1,4 +1,4 @@
-import type { Method } from 'functional-framework'
+import type { Method } from '@cexoso/ff-server'
 import Axios from 'axios'
 import { ResponseInterceptors } from './type'
 
