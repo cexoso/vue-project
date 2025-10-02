@@ -12,7 +12,9 @@ function createApp(o: { fileDir: string }) {
   const app = new Koa()
   const router = new Router()
   router.post('/api/upload', (ctx, _next) => {
+    console.log('debugger 🐛 do request')
     const files = ctx.request.files
+    console.log('debugger 🐛 after files')
     const toList = <T>(item: T | T[]) => {
       if (Array.isArray(item)) {
         return item
