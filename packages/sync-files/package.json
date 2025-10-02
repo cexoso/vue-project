@@ -22,7 +22,7 @@
     "release": "npm run ts-lint && vitest --run && npm run build",
     "prepublishOnly": "npm run release",
     "dev": "vite",
-    "dev-server": "FILE_DIR=../temp-file tsx watch ./index.ts"
+    "dev-server": "cross-env FILE_DIR=../temp-file tsx watch ./index.ts"
   },
   "sideEffects": false,
   "keywords": [],
@@ -38,6 +38,7 @@
     "@vitejs/plugin-vue": "^5.1.4",
     "@vitejs/plugin-vue-jsx": "^4.0.1",
     "@vue/tsconfig": "^0.7.0",
+    "cross-env": "^10.1.0",
     "supertest": "^7.1.4",
     "tailwindcss": "^4.1.11",
     "tsx": "^4.19.3",
