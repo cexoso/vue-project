@@ -2,7 +2,7 @@ import Koa from 'koa'
 import koaBody from 'koa-body'
 import { isAbsolute, join } from 'path'
 import { cwd } from 'process'
-import { renameSync } from 'fs'
+import { copyFileSync, unlinkSync } from 'fs'
 import { makeSureDirExist } from '@cexoso/utils'
 import serve from 'koa-static'
 import Router from 'koa-router'
@@ -28,7 +28,8 @@ function createApp(o: { fileDir: string }) {
           const originalFilename = file.originalFilename ?? Date.now().toString()
           const filepath = join(fileDir, originalFilename)
           makeSureDirExist(filepath)
-          renameSync(file.filepath, filepath)
+          copyFileSync(file.filepath, filepath)
+          unlinkSync(file.filepath)
         })
       }
     }
