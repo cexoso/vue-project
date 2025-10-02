@@ -4,10 +4,12 @@ import { isAbsolute, join } from 'path'
 import { cwd } from 'process'
 import { renameSync } from 'fs'
 import { makeSureDirExist } from '@cexoso/utils'
+import serve from 'koa-static'
 
 function createApp(o: { fileDir: string }) {
   const fileDir = o.fileDir
   const app = new Koa()
+  app.use(serve(join(__dirname, '../dist')))
   app.use(
     koaBody({
       multipart: true,
