@@ -20,7 +20,9 @@
     "build": "ts-pkg-build build --format ESM --format CommonJS",
     "ts-lint": "tsc --noEmit",
     "release": "npm run ts-lint && vitest --run && npm run build",
-    "prepublishOnly": "npm run release"
+    "prepublishOnly": "npm run release",
+    "dev": "vite",
+    "dev-server": "FILE_DIR=../temp-file tsx watch ./index.ts"
   },
   "sideEffects": false,
   "keywords": [],
@@ -29,16 +31,23 @@
   "devDependencies": {
     "@cexoso/configs": "workspace: *",
     "@cexoso/ts-pkg-build": "^0.0.24",
+    "@tailwindcss/vite": "^4.1.11",
     "@types/koa": "^2.15.0",
     "@types/supertest": "^6.0.3",
+    "@vitejs/plugin-legacy": "^7.2.1",
+    "@vitejs/plugin-vue": "^5.1.4",
+    "@vitejs/plugin-vue-jsx": "^4.0.1",
+    "@vue/tsconfig": "^0.7.0",
     "supertest": "^7.1.4",
+    "tailwindcss": "^4.1.11",
     "tsx": "^4.19.3",
     "vite": "^7.1.7",
-    "vitest": "^3.2.4"
+    "vitest": "^3.2.4",
+    "vue": "^3.5.22"
   },
   "dependencies": {
-    "koa": "^3.0.0",
     "@cexoso/utils": "workspace: *",
+    "koa": "^3.0.0",
     "koa-body": "^6.0.1"
   }
 }
