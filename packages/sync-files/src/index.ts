@@ -40,6 +40,10 @@ function createApp(o: { fileDir: string }) {
   app.use(
     koaBody({
       multipart: true,
+      formidable: {
+        maxFileSize: 2 * 1024 * 1024 * 1024,
+        // uploadDir: join(__dirname, '../../temp-file'),
+      },
     })
   )
   app.use(router.routes())

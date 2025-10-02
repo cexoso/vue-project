@@ -7,7 +7,7 @@
 <script lang="ts" setup>
 const onDrop = async (event: DragEvent) => {
   event.preventDefault()
-  const items = event.dataTransfer.items
+  const items = event.dataTransfer!.items
   const formData = new FormData()
 
   // 把文件 append 到 FormData
@@ -15,7 +15,7 @@ const onDrop = async (event: DragEvent) => {
 
   for (let i = 0; i < items.length; i++) {
     const item = items[i]
-    const file = item.getAsFile()
+    const file = item.getAsFile()!
     formData.append('files', file)
   }
 
