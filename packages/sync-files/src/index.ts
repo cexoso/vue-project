@@ -5,17 +5,13 @@ import { cwd } from 'process'
 import { renameSync } from 'fs'
 import { makeSureDirExist } from '@cexoso/utils'
 import serve from 'koa-static'
+import Router from 'koa-router'
 
 function createApp(o: { fileDir: string }) {
   const fileDir = o.fileDir
   const app = new Koa()
-  app.use(serve(join(__dirname, '../dist')))
-  app.use(
-    koaBody({
-      multipart: true,
-    })
-  )
-  app.use((ctx, _next) => {
+  const router = new Router()
+  router.post('/api/upload', (ctx, _next) => {
     const files = ctx.request.files
     const toList = <T>(item: T | T[]) => {
       if (Array.isArray(item)) {
@@ -37,6 +33,13 @@ function createApp(o: { fileDir: string }) {
     ctx.status = 200
     ctx.body = 'ok'
   })
+  app.use(serve(join(__dirname, '../dist')))
+  app.use(
+    koaBody({
+      multipart: true,
+    })
+  )
+  app.use(router.routes())
   return app
 }
 
