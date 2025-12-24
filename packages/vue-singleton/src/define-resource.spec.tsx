@@ -4,17 +4,24 @@ import { defineComponent, nextTick, reactive, shallowRef, watchEffect } from 'vu
 import { renderComponent } from '../test/render'
 import { define } from './define-singleton'
 import { delay, getOrCreateStub } from '@cexoso/test-utils'
-import { waitFor } from '@testing-library/dom'
+import { waitFor, screen } from '@testing-library/dom'
 
 describe('defineResource', () => {
   const useId = define(() => shallowRef(1))
-  const useRemoteData = defineResource(() => {
-    const id = useId()
-    return async () => {
-      const requestId = id.value
-      return delay(20).then(() => requestId)
+  const useRemoteData = defineResource(
+    () => {
+      const id = useId()
+      return () => ({
+        id: id.value,
+      })
+    },
+    () => {
+      return async (p) => {
+        const requestId = p.id
+        return delay(20).then(() => requestId)
+      }
     }
-  })
+  )
   const App = defineComponent({
     setup() {
       const remoteData = useRemoteData()
@@ -98,8 +105,15 @@ describe('defineResource', () => {
       () => {
         const id = useId()
         return () => {
+          return {
+            id: id.value,
+          }
+        }
+      },
+      () => {
+        return ({ id }) => {
           requestCount += 1
-          return Promise.resolve(id.value)
+          return Promise.resolve(id)
         }
       },
       { interval: 10 }
@@ -136,38 +150,46 @@ describe('defineResource', () => {
     const useRemoteData = defineResource(
       () => {
         const id = useId()
-        return () => {
+        return () => ({
+          id: id.value,
+        })
+      },
+      () => {
+        return ({ id }) => {
           requestCount += 1
           if (isReturnError) {
             return Promise.reject(new Error('error'))
           }
-          return Promise.resolve(id.value)
+          return Promise.resolve(id)
         }
       },
       { interval: 10 }
     )
     const App = defineComponent({
       setup() {
-        const { error } = useRemoteData()
+        const { error, isLoading } = useRemoteData()
         return () => {
+          if (isLoading.value) {
+            return null
+          }
           return <div>{error.value ? (error.value as Error).message : 'success'}</div>
         }
       },
     })
 
-    const screen = renderComponent(App)
-    await screen.findByText('success')
+    const s1 = renderComponent(App)
+    await s1.findByText('success')
     isReturnError = true
-    await delay(20)
+    await delay(21)
     // 静默更新数据情况下，如果请求出错也不会把错误返回，而是会使用之前的数据
     // TODO: 这里是否要考虑明确错误如 network error，而不应该静默忽略掉所有的错误
-    await screen.findByText('success')
+    await s1.findByText('success')
 
-    screen.play(() => {
+    s1.play(() => {
       useId().value = 2
     })
     // 由响应式数据引发请求，错误会正确的抛给用户
-    await screen.findByText('error')
+    await s1.findByText('error')
   })
 
   it('数据竞态处理', async () => {
@@ -176,10 +198,15 @@ describe('defineResource', () => {
     const useRemoteData = defineResource(
       () => {
         const id = useId()
-        return async () => {
+        return () => ({
+          x: id.value,
+        })
+      },
+      () => {
+        return async (p) => {
           callCount += 1
           let count = callCount
-          if (id.value === 0) {
+          if (p.x === 0) {
             return delay(20).then(() => count)
           }
           return Promise.resolve(count)
@@ -203,7 +230,7 @@ describe('defineResource', () => {
     })
 
     const screen = renderComponent(App)
-    await delay(20) // 20ms 后一条数据返回
+    await delay(21) // 20ms 后一条数据返回
     expect(result).deep.eq([1])
     await delay(15) // 15ms 后一条新的请求
     // 此时通过修改响应式数据主动发一次请求
@@ -222,11 +249,11 @@ describe('defineResource', () => {
     const useRemoteData = defineResource(
       () => {
         const id = useId()
-        return async () => {
-          const x = id.value
-          return delay(20).then(() => x)
-        }
+        return () => ({
+          x: id.value,
+        })
       },
+      () => async (p) => delay(20).then(() => p.x),
       { retain: true }
     )
 
@@ -254,13 +281,16 @@ describe('defineResource', () => {
   })
   it('主动请求的情况下，数据不保留', async () => {
     const useId = define(() => shallowRef(1))
-    const useRemoteData = defineResource(() => {
-      const id = useId()
-      return async () => {
-        const x = id.value
+    const useRemoteData = defineResource(
+      () => {
+        const id = useId()
+        return () => ({ id: id.value })
+      },
+      () => async (params) => {
+        const x = params.id
         return delay(20).then(() => x)
       }
-    })
+    )
 
     let result: number[] = []
     const App = defineComponent({

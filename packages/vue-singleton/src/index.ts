@@ -1,3 +1,3 @@
 export { define } from './define-singleton'
-export { createContext, ContextKey } from './context'
+export { createContext, Context, WithContext } from './context'
 export { defineResource } from './define-resource'
