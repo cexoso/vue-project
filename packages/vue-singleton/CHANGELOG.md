@@ -1,5 +1,11 @@
 # @cexoso/vue-singleton
 
+## 0.0.16
+
+### Patch Changes
+
+- 1b74b89: 新增全局模式，该模式并非为了测试，而是为 node 提供非核运行上下文
+
 ## 0.0.15
 
 ### Patch Changes

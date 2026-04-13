@@ -1,5 +1,11 @@
 # @cexoso/diff-template
 
+## 0.0.8
+
+### Patch Changes
+
+- 9ca6124: 基于 singleton 伪内核模式在命令行中输出覆盖率信息
+
 ## 0.0.7
 
 ### Patch Changes
