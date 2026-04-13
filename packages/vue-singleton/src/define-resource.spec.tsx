@@ -4,7 +4,7 @@ import { defineComponent, nextTick, reactive, shallowRef, watchEffect } from 'vu
 import { renderComponent } from '../test/render'
 import { define } from './define-singleton'
 import { delay, getOrCreateStub } from '@cexoso/test-utils'
-import { waitFor, screen } from '@testing-library/dom'
+import { waitFor } from '@testing-library/dom'
 
 describe('defineResource', () => {
   const useId = define(() => shallowRef(1))
