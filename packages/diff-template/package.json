@@ -1,5 +1,6 @@
 {
   "name": "@cexoso/diff-template",
+  "private": true,
   "version": "0.0.8",
   "scripts": {
     "type-check": "vue-tsc --noEmit -p tsconfig.json",
