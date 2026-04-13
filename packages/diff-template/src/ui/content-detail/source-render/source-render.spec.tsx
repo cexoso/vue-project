@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { EmptyPlayground, renderTestApp } from '../../../render-app/render-test'
+import { EmptyPlayground, renderTestApp } from '../../render-app/render-test'
 import { mockBase, mockGitDiff } from '../../../mock/base'
 import { useRouter } from 'vue-router'
 import { PrismRender } from './prism-render'

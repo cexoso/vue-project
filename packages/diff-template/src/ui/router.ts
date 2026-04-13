@@ -1,7 +1,7 @@
 import type { RouterHistory } from 'vue-router'
 import { createRouter as innerCreateRouter } from 'vue-router'
-import Index from './page/index/index.vue'
-import contentDetail from './page/content-detail/content-detail.vue'
+import Index from './index-page/index.vue'
+import contentDetail from './content-detail/content-detail.vue'
 
 export function createRouter(opts: { history: RouterHistory }) {
   return innerCreateRouter({

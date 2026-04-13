@@ -1,4 +1,6 @@
 import { defineConfig, type PluginOption } from 'vite'
+// @ts-ignore TestProjectConfiguration is used in satisfies expressions
+import type { TestProjectConfiguration } from 'vitest/config'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import legacy from '@vitejs/plugin-legacy'
@@ -23,18 +25,38 @@ export default defineConfig(() => {
       outDir: join(__dirname, './dist'),
     },
     test: {
-      browser: {
-        ui: false,
-        enabled: true,
-        isolate: false,
-        screenshotFailures: false,
-        provider: 'playwright',
-        instances: [{ browser: 'chromium' }],
-        testerScripts: [{ src: './setup-for-test.ts' }],
-      },
       coverage: {
-        exclude: ["**/*.stories.tsx"]
-      }
+        exclude: ['**/*.stories.tsx'],
+      },
+      workspace: [
+        {
+          extends: true,
+          test: {
+            name: 'browser',
+            include: ['src/**/*.spec.tsx', 'src/**/*.spec.ts'],
+            browser: {
+              ui: false,
+              enabled: true,
+              isolate: false,
+              screenshotFailures: false,
+              provider: 'playwright',
+              instances: [{ browser: 'chromium' }],
+              testerScripts: [{ src: './setup-for-test.ts' }],
+            },
+          },
+        } satisfies TestProjectConfiguration,
+        {
+          extends: true,
+          test: {
+            name: 'node',
+            include: ['src/**/*.node.spec.ts'],
+            environment: 'node',
+            browser: {
+              enabled: false,
+            },
+          },
+        } satisfies TestProjectConfiguration,
+      ],
     },
   }
 })

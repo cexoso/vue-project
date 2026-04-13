@@ -1,7 +1,7 @@
 import { computed } from 'vue'
 import { useGitDiffData } from './data'
 import { handleDiff, type ChangeLines } from './git-diff-parse'
-import { useProjectInfo } from '../coverage-data/coverage-handle'
+import { useProjectInfo } from '../coverage/coverage-handle'
 import { relative } from '../../utils/path-relative'
 
 const useGitChangeset = () => {

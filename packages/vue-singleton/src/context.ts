@@ -25,7 +25,21 @@ export interface Context {
 }
 
 function useRawContext() {
+  if (globalContext !== undefined) {
+    return globalContext
+  }
   return inject<ContentStore | undefined>(ContextKey, undefined)
+}
+
+type GlobalContext = ReturnType<typeof createContextStore>
+let globalContext: ReturnType<typeof createContextStore> | undefined = undefined
+
+/**
+ * @description node 全局上下文模式，这个模式下 context 直接绑定到 node 程序 ESM top level scope 上下文, 这个模式不是在浏览器模式下使用的
+ */
+export const setupGloablContext = (nextGlobalContext?: GlobalContext) => {
+  globalContext = nextGlobalContext ?? createContextStore()
+  return globalContext
 }
 
 export const useContext = (useRoot?: boolean) => {
@@ -33,7 +47,8 @@ export const useContext = (useRoot?: boolean) => {
   const message =
     'The possible reasons for the current error are: \n' +
     '1) You need to use use(createContext()) to create a context when creating the app\n' +
-    '2) Hooks functions can only be called within the setup function.'
+    '2) Hooks functions can only be called within the setup function.\n' +
+    '3) If you are using global context mode, you should call setupGloablContext first.'
   if (context === undefined) {
     throw new Error(message)
   }

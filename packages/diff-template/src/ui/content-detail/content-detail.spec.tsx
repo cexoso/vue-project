@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { renderTestApp } from '../../render-app/render-test'
+import { renderTestApp } from '../render-app/render-test'
 import { mockBase, mockGCMExample, mockGitDiff, mockSingleDirMode } from '../../mock/base'
 import { useRouter } from 'vue-router'
 import Panel from './panel.vue'

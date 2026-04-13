@@ -24,7 +24,7 @@
 
 <script lang="ts" setup>
 import { computed } from 'vue'
-import CoveragePanel from '../../components/coverage-panel.vue'
+import CoveragePanel from '../components/coverage-panel.vue'
 import { getDir, getFilename } from '../../utils'
 import {
   useFilePath,
@@ -32,7 +32,7 @@ import {
   useCurrentLinesCoverageData,
   useCurrentBranchCoverageData,
   useCurrentFunctionsCoverageData,
-} from './controller'
+} from '../../core/content-detail/controller'
 import { usePush } from '../../utils/use-router'
 const statements = useCurrentStatementsCoverageData()
 const lines = useCurrentLinesCoverageData()
