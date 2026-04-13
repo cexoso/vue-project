@@ -1,6 +1,6 @@
 {
   "name": "@cexoso/vue-singleton",
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "",
   "publishConfig": {
     "directory": "dist",
