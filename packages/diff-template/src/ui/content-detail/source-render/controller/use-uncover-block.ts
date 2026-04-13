@@ -1,7 +1,7 @@
 import { computed } from 'vue'
-import { useCoverageData } from '../../../../model/coverage-data'
-import { useFilePath, useHasChange } from '../../controller'
-import { isCodeRanger, useGetBranchHasChange } from '../../../../model/coverage-data/coverage-handle'
+import { useCoverageData } from '../../../../domain/coverage'
+import { useFilePath, useHasChange } from '../../../../core/content-detail/controller'
+import { isCodeRanger, useGetBranchHasChange } from '../../../../domain/coverage/coverage-handle'
 import { useSourceHelper } from './use-source-helper'
 import type { AllBlock } from './type'
 

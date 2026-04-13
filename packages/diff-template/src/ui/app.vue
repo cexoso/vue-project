@@ -3,8 +3,8 @@
 </template>
 
 <script lang="ts" setup>
-import { useToggleGitDiffFeature } from './model/git-diff'
-import { useKeydown } from './utils/use-keydown'
+import { useToggleGitDiffFeature } from '../domain/git-diff'
+import { useKeydown } from '../utils/use-keydown'
 
 const toggleGitDiffFeature = useToggleGitDiffFeature()
 useKeydown('KeyM', toggleGitDiffFeature)

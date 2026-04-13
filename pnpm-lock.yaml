@@ -43,8 +43,8 @@ importers:
         specifier: 0.0.4
         version: link:../test-utils
       '@cexoso/vue-singleton':
-        specifier: 0.0.11
-        version: 0.0.11(vue@3.5.18)
+        specifier: 'workspace: *'
+        version: link:../vue-singleton
       '@storybook/addon-essentials':
         specifier: 8.6.12
         version: 8.6.12(@types/react@19.1.11)(storybook@8.6.12)
@@ -1817,14 +1817,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: true
-
-  /@cexoso/vue-singleton@0.0.11(vue@3.5.18):
-    resolution: {integrity: sha512-EjQkyPC3liDKk971v58UanqJ5bXSagWCFA89hbJrJg9gR3ABveqqmUsq0BiczXRq+32MGlrWUugN8IdgRGTQcQ==}
-    peerDependencies:
-      vue: ^3.0.0
-    dependencies:
-      vue: 3.5.18(typescript@5.8.3)
     dev: true
 
   /@changesets/apply-release-plan@7.0.12:

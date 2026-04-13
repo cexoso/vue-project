@@ -1,8 +1,8 @@
 import type { Decorator } from '@storybook/html'
 import type { Component } from 'vue'
 import { createContainer } from './create-container'
-import App from '../app.vue'
-import { renderTest } from '../render-app/render-test'
+import App from '../ui/app.vue'
+import { renderTest } from '../ui/render-app/render-test'
 
 type Play = () => void
 

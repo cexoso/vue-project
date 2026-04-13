@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { renderTestApp } from '../../render-app/render-test'
+import { renderTestApp } from '../render-app/render-test'
 import { mockBase, mockGitDiff, mockSingleDirMode } from '../../mock/base'
 import { getByRole, fireEvent, waitFor, findByText } from '@testing-library/dom'
 import { useRoute } from 'vue-router'

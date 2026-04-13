@@ -1,6 +1,6 @@
 import { computed } from 'vue'
-import { useCoverageData } from '../../../../model/coverage-data'
-import { useFilePath } from '../../controller'
+import { useCoverageData } from '../../../../domain/coverage'
+import { useFilePath } from '../../../../core/content-detail/controller'
 import { SourceHelper } from '../source'
 
 export const useSourceHelper = () => {

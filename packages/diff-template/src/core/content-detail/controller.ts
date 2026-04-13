@@ -1,3 +1,4 @@
+// packages/diff-template/src/core/content-detail/controller.ts
 import { useRoute } from 'vue-router'
 import type { CodeRanger } from '../../type'
 import { computed } from 'vue'
@@ -7,7 +8,7 @@ import {
   useGetLinesCoverageDataByFilepath,
   useGetStatementsCoverageDataByFilepath,
   useIsBlockHasChange,
-} from '../../model/coverage-data/coverage-handle'
+} from '../../domain/coverage/coverage-handle'
 
 export const useFilePath = () => {
   const route = useRoute()
@@ -29,21 +30,18 @@ export const useCurrentStatementsCoverageData = () => {
 
 export const useCurrentBranchCoverageData = () => {
   const getCoverageDataByFilepath = useGetBranchCoverageDataByFilepath()
-
   const file = useFilePath()
   return computed(() => getCoverageDataByFilepath.value(file))
 }
 
 export const useCurrentFunctionsCoverageData = () => {
   const getCoverageDataByFilepath = useGetFunctionCoverageDataByFilepath()
-
   const file = useFilePath()
   return computed(() => getCoverageDataByFilepath.value(file))
 }
 
 export const useCurrentLinesCoverageData = () => {
   const getCoverageDataByFilepath = useGetLinesCoverageDataByFilepath()
-
   const file = useFilePath()
   return computed(() => getCoverageDataByFilepath.value(file))
 }

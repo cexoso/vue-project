@@ -42,8 +42,8 @@
 
 <script lang="ts" setup>
 import { computed, type PropType } from 'vue'
-import type { AllCoverageDataDeatil } from '../model/coverage-data/coverage-handle'
-import { toFraction, toPercent } from '../utils/format-coverage'
+import type { AllCoverageDataDeatil } from '../../domain/coverage/coverage-handle'
+import { toFraction, toPercent } from '../../utils/format-coverage'
 
 const props = defineProps({
   coverageData: {

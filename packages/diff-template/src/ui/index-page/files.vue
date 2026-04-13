@@ -127,7 +127,7 @@
 </template>
 
 <script setup lang="ts">
-import { useDir, useFiles } from './controller'
+import { useDir, useFiles } from '../../core/index-page/controller'
 import { toFraction, toPercent } from '../../utils/format-coverage'
 import type { CoverageStatisticsData } from '../../type'
 import { useChangeQuery, usePush } from '../../utils/use-router'
