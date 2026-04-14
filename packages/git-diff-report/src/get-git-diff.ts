@@ -62,8 +62,6 @@ export const resolveTargetBranch = (): ResolvedTarget | undefined => {
     }
   }
 
-  process.stderr.write(
-    '[git-diff-report] 未配置对比分支，将生成全量覆盖率报告\n'
-  )
+  process.stderr.write('[git-diff-report] 未配置对比分支，将生成全量覆盖率报告\n')
   return undefined
 }
