@@ -2,6 +2,13 @@
   "name": "@cexoso/git-diff-report",
   "version": "0.0.9",
   "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "type-check": "tsc --noEmit",
     "build": "pkgroll",

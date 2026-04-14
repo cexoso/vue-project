@@ -81,7 +81,6 @@ const printCoverageStats = (stats: AllCoverageDataDeatil) => {
 }
 
 export const renderReport = (opts: Options) => {
-  console.log('debugger 🐛 1ewe', 1)
   const htmlFile = join(opts.outDir, 'index.html')
   makeDirExist(htmlFile)
   writeFileSync(
