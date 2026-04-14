@@ -1,7 +1,7 @@
 import type { FileContentWriter } from 'istanbul-lib-report'
 import { ReportBase, type ReportNode, type Context } from 'istanbul-lib-report'
 import { join, relative, dirname } from 'node:path'
-import { getGitDiff, getProjectRoot } from './get-git-diff'
+import { getGitDiff, getProjectRoot, resolveTargetBranch } from './get-git-diff'
 import { renderReport } from '@cexoso/diff-template'
 
 const getRelativePath = (node: ReportNode) => {
@@ -63,19 +63,11 @@ export class GitDiffReport extends ReportBase {
   }
 
   getDiff() {
-    const gitDiffTarget = process.env['git_diff_target']
-    if (gitDiffTarget) {
-      const content = getGitDiff(gitDiffTarget)
-      return content
+    const resolved = resolveTargetBranch()
+    if (resolved) {
+      return getGitDiff(resolved.target)
     }
     return ''
-  }
-  getMetaInfo(_node: ReportNode) {
-    const gitDiffTarget = process.env['git_diff_target']
-    if (gitDiffTarget) {
-      return { projectInfo: relative(getProjectRoot(), this.projectRoot) }
-    }
-    return {}
   }
 
   onEnd(_node: ReportNode, context: Context) {
