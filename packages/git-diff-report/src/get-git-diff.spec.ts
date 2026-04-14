@@ -13,14 +13,15 @@ describe('resolveTargetBranch', () => {
     delete process.env['CI_MERGE_REQUEST_TARGET_BRANCH_NAME']
     // 拦截 stderr
     stderrOutput = []
-    vi.spyOn(process.stderr, 'write').mockImplementation((chunk) => {
+    vi.spyOn(process.stderr, 'write').mockImplementation((chunk: string | Uint8Array) => {
       stderrOutput.push(String(chunk))
       return true
     })
   })
 
   afterEach(() => {
-    process.env = originalEnv
+    Object.keys(process.env).forEach((key) => delete process.env[key])
+    Object.assign(process.env, originalEnv)
     vi.restoreAllMocks()
   })
 
