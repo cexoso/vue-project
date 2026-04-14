@@ -1,5 +1,11 @@
 # @cexoso/git-diff-report
 
+## 0.0.9
+
+### Patch Changes
+
+- 6f658f8: 新增自动检测逻辑，降低接入成本
+
 ## 0.0.8
 
 ### Patch Changes
