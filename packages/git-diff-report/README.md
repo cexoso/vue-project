@@ -16,6 +16,9 @@ pnpm add @cexoso/git-diff-report -D
 
 ```typescript
 import { defineConfig } from 'vite'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
 
 export default defineConfig({
   test: {
@@ -40,6 +43,9 @@ vitest run --coverage
 ## 配置（Jest）
 
 在 `jest.config.js` 中：
+
+> [!NOTE]
+> Jest 配置文件通常是 CommonJS（`jest.config.js`），`require` 天然可用。若使用 ESM（`jest.config.mjs`），需要参考 Vitest 示例使用 `createRequire`。
 
 ```javascript
 module.exports = {
@@ -157,6 +163,9 @@ git_diff_target=abc1234 vitest run --coverage
 
 ```typescript
 import { defineConfig } from 'vite'
+import { createRequire } from 'node:module'
+
+const require = createRequire(import.meta.url)
 
 export default defineConfig({
   test: {
