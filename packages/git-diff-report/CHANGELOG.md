@@ -1,5 +1,13 @@
 # @cexoso/git-diff-report
 
+## 0.0.10
+
+### Patch Changes
+
+- 6245d1c: 移除 renderReport 中多余的 console.log 调试语句；git-diff-report 新增 ESM exports 支持 import.meta.resolve
+- Updated dependencies [6245d1c]
+  - @cexoso/diff-template@0.0.9
+
 ## 0.0.9
 
 ### Patch Changes
